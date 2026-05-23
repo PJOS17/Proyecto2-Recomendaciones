@@ -24,18 +24,22 @@ body{
 /* SIDEBAR */
 
 .side-bar{
-    width: 240px;
-    height: 100vh;
+    width:240px;
+    height:100vh;
 
-    background-color: #0a0a0a;
+    background:#0a0a0a;
 
-    border-right: 1px solid #1c1c1c;
+    border-right:1px solid #1f1f1f;
 
-    padding: 30px;
+    padding:30px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    position:fixed;
+    left:0;
+    top:0;
 }
 
 .logo{
@@ -55,17 +59,25 @@ body{
     gap: 20px;
 }
 
-.side-bar a{
-    text-decoration: none;
-    color: #B0B0B0;
+.menu a,
+.bottom-menu a{
+    text-decoration:none;
+    color:#B0B0B0;
 
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    display:flex;
+    align-items:center;
+    gap:12px;
 
-    transition: 0.3s;
+    padding:12px;
 
-    font-weight: 600;
+    border-radius:10px;
+
+    transition:0.3s;
+}
+.menu a:hover,
+.active{
+    background:#111;
+    color:#39FF14;
 }
 
 .side-bar a:hover{
@@ -75,12 +87,17 @@ body{
 /* MAIN */
 
 .main-content{
-    flex: 1;
-    height: 100vh;
+    margin-left:240px;
 
-    overflow-y: auto;
+    flex:1;
 
-    padding: 40px 50px 140px 50px;
+    height:100vh;
+
+    overflow-y:auto;
+
+    padding:40px;
+
+    padding-bottom:160px;
 }
 
 /* TOP BAR */
@@ -291,12 +308,13 @@ body{
     display: flex;
     align-items: center;
     gap: 15px;
+    text-decoration: none;
+    color: white;
 }
 
 .song-info img{
     width: 60px;
     height: 60px;
-
     border-radius: 10px;
 }
 
@@ -346,39 +364,4 @@ body{
     background-color: #39FF14;
 
     border-radius: 20px;
-}
-
-/* VOLUME */
-
-.volume-bar{
-    width: 100px;
-    height: 4px;
-
-    background-color: #333;
-
-    border-radius: 20px;
-}
-
-.volume-progress{
-    width: 70%;
-    height: 100%;
-
-    background-color: #39FF14;
-
-    border-radius: 20px;
-}
-
-/* ICONS */
-
-.player-controls i,
-.song-time i,
-.song-info i{
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.player-controls i:hover,
-.song-time i:hover,
-.song-info i:hover{
-    color: #39FF14;
 }
