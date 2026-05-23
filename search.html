@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search</title>
+
+    <link rel="stylesheet" href="css/search.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+    <div id="particles-js"></div>
+
+    <!-- SIDEBAR -->
+
+    <div class="side-bar">
+
+        <div>
+
+            <h1 class="logo">VIBES</h1>
+
+            <p class="premium">Premium Account</p>
+
+            <div class="menu">
+
+                <a href="home.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+
+                <a class="active" href="search.html">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </a>
+
+                <a href="library.html">
+                    <i class="fa-solid fa-book"></i>
+                    Library
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-radio"></i>
+                    Radio
+                </a>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <button class="genres-btn">
+                Your Top Genres
+            </button>
+
+            <div class="bottom-menu">
+
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-circle-question"></i>
+                    Support
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+
+        <!-- TOP BAR -->
+
+        <div class="top-bar">
+
+            <div class="top-links">
+
+                <a href="#">Discover</a>
+                <a href="#">New Releases</a>
+                <a href="#">Live</a>
+
+            </div>
+
+            <div class="top-right">
+
+                <button class="upgrade-btn">
+                    Upgrade
+                </button>
+
+                <i class="fa-regular fa-bell"></i>
+
+                <i class="fa-regular fa-circle-user"></i>
+
+            </div>
+
+        </div>
+
+        <!-- SEARCH INPUT -->
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                placeholder="Search artists, tracks, or data nodes..."
+            >
+
+        </div>
+
+        <!-- TAGS -->
+
+        <div class="tag-row">
+
+            <button>Cyberpunk</button>
+
+            <button>Neural Funk</button>
+
+            <button>Synthwave</button>
+
+            <button>Data Sonification</button>
+
+        </div>
+
+        <!-- SEARCH LAYOUT -->
+
+        <div class="search-layout">
+
+            <!-- LEFT -->
+
+            <div class="graph-panel">
+
+                <div class="fake-graph">
+
+                    <div class="center-node"></div>
+
+                </div>
+
+                <h3>Interactive Topology Map</h3>
+
+                <p>
+                    Discover contextual recommendations based on
+                    acoustic data similarity.
+                </p>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="node-panel">
+
+                <h4>Selected Node</h4>
+
+                <h1>NOD3_ALPHA</h1>
+
+                <p>Similarity Index: 98.4%</p>
+
+                <div class="stat">
+
+                    <span>BPM Variance</span>
+
+                    <div class="line"></div>
+
+                </div>
+
+                <div class="stat">
+
+                    <span>Timbre Complexity</span>
+
+                    <div class="line"></div>
+
+                </div>
+
+                <div class="stat">
+
+                    <span>Neural Density</span>
+
+                    <div class="line"></div>
+
+                </div>
+
+                <button class="play-cluster">
+                    Play Cluster
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- EXTRA SECTION -->
+
+        <div class="section-title">
+
+            <h2>Recommended Nodes</h2>
+
+        </div>
+
+        <div class="recommended-grid">
+
+            <div class="recommend-card">
+
+                <img src="https://picsum.photos/300?1">
+
+                <h4>Ghost Protocol</h4>
+
+                <p>98% compatibility</p>
+
+            </div>
+
+            <div class="recommend-card">
+
+                <img src="https://picsum.photos/300?2">
+
+                <h4>Neon Collapse</h4>
+
+                <p>96% compatibility</p>
+
+            </div>
+
+            <div class="recommend-card">
+
+                <img src="https://picsum.photos/300?3">
+
+                <h4>Data Bloom</h4>
+
+                <p>94% compatibility</p>
+
+            </div>
+
+            <div class="recommend-card">
+
+                <img src="https://picsum.photos/300?4">
+
+                <h4>Signal Fade</h4>
+
+                <p>92% compatibility</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PLAYER -->
+
+    <div class="music-player">
+
+        <!-- LEFT -->
+
+        <div class="song-info">
+
+            <img src="https://picsum.photos/100?10">
+
+            <div>
+
+                <h4>Neural Link / Alpha</h4>
+
+                <p>Jon Hopkins</p>
+
+            </div>
+
+            <i class="fa-regular fa-heart"></i>
+
+        </div>
+
+        <!-- CENTER -->
+
+        <div class="player-controls">
+
+            <i class="fa-solid fa-shuffle"></i>
+
+            <i class="fa-solid fa-backward"></i>
+
+            <button class="play-btn">
+
+                <i class="fa-solid fa-play"></i>
+
+            </button>
+
+            <i class="fa-solid fa-forward"></i>
+
+            <i class="fa-solid fa-repeat"></i>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="song-time">
+
+            <i class="fa-solid fa-computer"></i>
+
+            <span>2:14</span>
+
+            <div class="progress-bar">
+
+                <div class="progress"></div>
+
+            </div>
+
+            <span>6:14</span>
+
+            <i class="fa-solid fa-volume-high"></i>
+
+            <div class="volume-bar">
+
+                <div class="volume-progress"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="js/search.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #1f1f1f 0%, black 12%);
+    overflow: hidden;
+}
+#particles-js{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.initial-text{
+    text-align: center;
+    color: whitesmoke;
+    max-width: 500px;
+    position: relative;
+}
+.initial-text::before{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(55, 255, 20, 0.258);
+    filter: blur(150px);
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+h1{
+    font-size: 60px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 0.9;
+}
+p{
+    font-size: 14px;
+    text-align: center;
+    color: #B0B0B0;
+    line-height: 1.6;
+}
+
+button{
+    background-color: #39FF14;
+    color: black;
+    border: none;
+    padding: 18px 50px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+button:hover{
+    background-color: #5dff3f;
+}
+
+a{
+    color: #B0B0B0;
+    text-decoration: none;
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+}
