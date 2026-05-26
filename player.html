@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Player</title>
+
+    <link rel="stylesheet" href="css/player.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+    <div id="particles-js"></div>
+
+    <!-- SIDEBAR -->
+
+    <div class="side-bar">
+
+        <div>
+
+            <h1 class="logo">VIBES</h1>
+
+            <div class="menu">
+
+                <a href="home.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+
+                <a href="search.html">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </a>
+
+                <a href="library.html">
+                    <i class="fa-solid fa-book"></i>
+                    Library
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-radio"></i>
+                    Radio
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="bottom-section">
+
+            <button class="genres-btn">
+                Your Top Genres
+            </button>
+
+            <div class="bottom-menu">
+
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-circle-question"></i>
+                    Support
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MAIN -->
+
+    <div class="main-content">
+
+        <!-- TOP BAR -->
+
+        <div class="top-bar">
+
+            <div class="top-links">
+
+                <a href="#">Now Playing</a>
+
+                <a href="#">Lyrics</a>
+
+                <a href="#">Queue</a>
+
+            </div>
+
+            <div class="top-right">
+
+                <button class="upgrade-btn">
+                    Upgrade
+                </button>
+
+                <i class="fa-regular fa-bell"></i>
+
+                <i class="fa-regular fa-circle-user"></i>
+
+            </div>
+
+        </div>
+
+        <!-- PLAYER LAYOUT -->
+
+        <div class="player-layout">
+
+            <!-- LEFT -->
+
+            <div class="album-panel">
+
+                <img
+                    class="album-cover"
+                    src="https://picsum.photos/700?50"
+                >
+
+                <div class="album-info">
+
+                    <h1>Neon Protocol</h1>
+
+                    <h3>Data_Streamer</h3>
+
+                    <!-- ACTIONS -->
+
+                    <div class="song-actions">
+
+                        <button class="action-btn">
+
+                            <i class="fa-regular fa-heart"></i>
+
+                            Save
+
+                        </button>
+
+                        <button class="action-btn">
+
+                            <i class="fa-solid fa-share"></i>
+
+                            Share
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- CONTROLS -->
+
+                <div class="player-controls">
+
+                    <i class="fa-solid fa-shuffle"></i>
+
+                    <i class="fa-solid fa-backward"></i>
+
+                    <button class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </button>
+
+                    <i class="fa-solid fa-forward"></i>
+
+                    <i class="fa-solid fa-repeat"></i>
+
+                </div>
+
+                <!-- PROGRESS -->
+
+                <div class="player-progress">
+
+                    <span>2:14</span>
+
+                    <div class="progress-bar">
+
+                        <div class="progress"></div>
+
+                    </div>
+
+                    <span>5:42</span>
+
+                </div>
+
+                <!-- VOLUME -->
+
+                <div class="volume-section">
+
+                    <i class="fa-solid fa-volume-high"></i>
+
+                    <div class="volume-bar">
+
+                        <div class="volume-progress"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CENTER -->
+
+            <div class="lyrics-panel">
+
+                <h2>LYRICS FEED</h2>
+
+                <div class="lyrics-content">
+
+                    <p class="active-line">
+                        Running the Neon Protocol
+                    </p>
+
+                    <p>
+                        Syntax burning bright tonight
+                    </p>
+
+                    <p>
+                        Signals drifting through the void
+                    </p>
+
+                    <p>
+                        Echo chambers synchronize
+                    </p>
+
+                    <p>
+                        Fractured data comes alive
+                    </p>
+
+                    <p>
+                        Mapping every neural trace
+                    </p>
+
+                    <p>
+                        Deep immersion in the static
+                    </p>
+
+                    <p>
+                        System pulse accelerating
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="queue-panel">
+
+                <h2>UP NEXT</h2>
+
+                <div class="queue-list">
+
+                    <div class="queue-song active-song">
+
+                        <img src="https://picsum.photos/100?51">
+
+                        <div>
+
+                            <h4>Neon Protocol</h4>
+
+                            <p>Data_Streamer</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="queue-song">
+
+                        <img src="https://picsum.photos/100?52">
+
+                        <div>
+
+                            <h4>Ghost in the Stack</h4>
+
+                            <p>Neural Protocol</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="queue-song">
+
+                        <img src="https://picsum.photos/100?53">
+
+                        <div>
+
+                            <h4>Signal Drift</h4>
+
+                            <p>Void State</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="queue-song">
+
+                        <img src="https://picsum.photos/100?54">
+
+                        <div>
+
+                            <h4>Pulse Architecture</h4>
+
+                            <p>SYNTH_DATA</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- INSIGHTS -->
+
+                <div class="insights-panel">
+
+                    <h3>Neural Insights</h3>
+
+                    <p>
+                        Current playback exhibits
+                        elevated harmonic convergence
+                        and high emotional resonance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="js/player.js"></script>
+
+</body>
+
+</html>
