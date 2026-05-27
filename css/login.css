@@ -1,86 +1,126 @@
+/* =============================================================================
+   login.css - Estilos de las páginas de Login y Registro (login.html y newacc.html)
+   =============================================================================
+   PROPÓSITO: Define la apariencia visual de los formularios de autenticación.
+   ESTÉTICA: Fondo oscuro con degradado, tarjeta de formulario con sombra verde neón,
+   inputs con efecto de enfoque (glow), y botón principal verde cyberpunk.
+   NOTA: Esta hoja de estilos se comparte entre login.html y newacc.html ya que
+   ambas páginas tienen la misma estructura visual.
+   ============================================================================= */
+
+/* ---- CUERPO DE LA PÁGINA ---- */
+/* Establece el fondo oscuro y centra todo el contenido vertical y horizontalmente */
 body{
-    background-color: black;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    background: linear-gradient(to bottom, #1f1f1f 0%, black 12%);
+    background-color: black;           /* Color de fondo base: negro */
+    color: white;                      /* Color de texto por defecto: blanco */
+    font-family: 'Inter', sans-serif;  /* Fuente tipográfica Inter de Google Fonts */
+    display: flex;                     /* Flexbox: permite centrar el contenido */
+    justify-content: center;           /* Centra horizontalmente los hijos */
+    align-items: center;               /* Centra verticalmente los hijos */
+    height: 100vh;                     /* Altura: 100% del viewport (toda la pantalla visible) */
+    flex-direction: column;            /* Los elementos se apilan verticalmente */
+    background: linear-gradient(to bottom, #1f1f1f 0%, black 12%); /* Degradado suave de gris a negro */
 }
 
+/* ---- CAMPOS DE ENTRADA (input) ---- */
+/* Estilos para los campos de texto y contraseña del formulario */
 input{
-    width: 330px;
-    height: 20px;
-    background-color: rgb(89, 86, 86);
-    color: white;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 8px;
-    padding-left: 10px;
-    transition: 0.3s;
+    width: 330px;                              /* Ancho fijo de 330px */
+    height: 20px;                              /* Altura de 20px */
+    background-color: rgb(89, 86, 86);         /* Fondo gris oscuro */
+    color: white;                              /* Texto blanco para legibilidad sobre fondo oscuro */
+    margin-top: 5px;                           /* Pequeño margen superior */
+    margin-bottom: 10px;                       /* Margen inferior para separar de la siguiente etiqueta */
+    border: none;                              /* Sin borde visible */
+    border-radius: 8px;                        /* Esquinas ligeramente redondeadas */
+    padding-left: 10px;                        /* Relleno izquierdo: separa el texto del borde */
+    transition: 0.3s;                          /* Transición suave para el efecto hover */
 }
+
+/* ---- EFECTO HOVER EN INPUTS ---- */
+/* Cuando el cursor pasa sobre el campo, el fondo se aclara ligeramente */
 input:hover{
-    background-color: #555;
+    background-color: #555; /* Gris más claro al pasar el mouse: retroalimentación visual */
 }
+
+/* ---- EFECTO FOCUS EN INPUTS ---- */
+/* Cuando el campo está activo (el usuario está escribiendo en él) */
 input:focus{
-    outline: none;
-    box-shadow: 0px 0px 10px #37ff145e;
+    outline: none;                           /* Elimina el borde azul predeterminado del navegador */
+    box-shadow: 0px 0px 10px #37ff145e;      /* Resplandor verde neón suave alrededor del campo */
+    /* El color #37ff145e es verde neón con baja opacidad (5e = ~37%) para un brillo sutil */
 }
 
+/* ---- BOTÓN PRINCIPAL ---- */
+/* Botón verde neón para "Registrar" o "Iniciar" */
 button{
-    background-color: #39FF14;
-    color: black;
-    border: none;
-    padding: 14px 28px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
+    background-color: #39FF14;  /* Fondo verde neón: color de acción principal de VIBES */
+    color: black;               /* Texto negro para contraste sobre fondo verde */
+    border: none;               /* Sin borde */
+    padding: 14px 28px;         /* Relleno: 14px vertical, 28px horizontal */
+    margin-top: 30px;           /* Margen superior para separar del último campo */
+    margin-bottom: 30px;        /* Margen inferior */
+    border-radius: 30px;        /* Esquinas muy redondeadas: forma de píldora */
+    cursor: pointer;            /* Cursor de mano al pasar por encima */
+    transition: 0.3s;           /* Transición suave para el efecto hover */
+    font-weight: bold;          /* Texto en negrita */
 }
+
+/* ---- TÍTULO h1: "VIBES" ---- */
+/* Estilo del nombre de la marca en la parte superior */
 h1{
-    font-size: 60px;
-    letter-spacing: -2px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 0.9;
+    font-size: 60px;         /* Fuente grande: 60px para máximo impacto */
+    letter-spacing: -2px;    /* Espaciado negativo: acerca las letras para un look moderno y compacto */
+    font-weight: 700;        /* Negrita */
+    margin-bottom: 15px;     /* Separación inferior del subtítulo */
+    line-height: 0.9;        /* Altura de línea menor a 1 para compactar verticalmente */
 }
+
+/* ---- EFECTO HOVER DEL BOTÓN ---- */
+/* Cambio de color cuando el mouse pasa sobre el botón */
 button:hover{
-    background-color: #5dff3f;
+    background-color: #5dff3f; /* Verde más claro: efecto de iluminación interactivo */
 }
 
+/* ---- TARJETA DE FORMULARIO ---- */
+/* Contenedor tipo "card" que agrupa los campos de login/registro */
 .login-card{
-    background-color: #111;
-    padding: 25px;
-    width: 350px;
-    height: 280px;
-    border-radius: 20px;
-    box-shadow:
-        0px 0px 30px rgba(0,0,0,0.8),
-        0px 0px 15px rgba(57,255,20,0.35);
+    background-color: #111;    /* Fondo gris muy oscuro (casi negro) */
+    padding: 25px;             /* Relleno interno de 25px en todos los lados */
+    width: 350px;              /* Ancho fijo de 350px */
+    height: 280px;             /* Altura fija de 280px */
+    border-radius: 20px;       /* Esquinas redondeadas para un look moderno */
+    box-shadow:                /* Doble sombra para efecto de profundidad y brillo */
+        0px 0px 30px rgba(0,0,0,0.8),        /* Sombra negra difusa: da sensación de elevación */
+        0px 0px 15px rgba(57,255,20,0.35);    /* Sombra verde neón: efecto de brillo cyberpunk */
 }
+
+/* ---- ETIQUETAS DENTRO DE LA TARJETA ---- */
+/* Estilo de los textos "Usuario" y "Contraseña" dentro del formulario */
 .login-card p{
-    color: #c6c1c1;
-    font-size: 15px;
-    margin-bottom: 2px;
+    color: #c6c1c1;     /* Gris claro: texto secundario */
+    font-size: 15px;     /* Tamaño mediano */
+    margin-bottom: 2px;  /* Margen mínimo inferior: el input queda pegado a la etiqueta */
 }
 
+/* ---- PÁRRAFOS GENERALES ---- */
+/* Estilo base para todos los párrafos <p> de la página */
 p{
-    margin-bottom: 10px;
-    font-family: 'Inter', sans-serif;
+    margin-bottom: 10px;               /* Margen inferior estándar */
+    font-family: 'Inter', sans-serif;  /* Fuente Inter */
 }
 
+/* ---- SECCIÓN DEL LOGO ---- */
+/* Contenedor del título "VIBES" y el subtítulo */
 .logo-section{
-    margin-top: 5px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-.logo-section p{
-    margin-bottom: 30px;
-    color: #B0B0B0;
+    margin-top: 5px;       /* Pequeño margen superior */
+    margin-bottom: 50px;   /* Gran margen inferior para separar de la tarjeta de formulario */
+    text-align: center;    /* Texto centrado horizontalmente */
 }
 
+/* ---- SUBTÍTULO DEL LOGO ---- */
+/* Estilo del texto "REGISTRAR PERFIL" o "INICIALIZAR PERFIL" bajo el título */
+.logo-section p{
+    margin-bottom: 30px;   /* Separación generosa del contenido inferior */
+    color: #B0B0B0;        /* Gris claro: texto secundario bajo el nombre de la marca */
+}

@@ -1,290 +1,339 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html lang="en"> <!-- Elemento raíz del documento HTML -->
 
-<head>
+<head> <!-- Sección de metadatos del documento -->
 
+    <!-- Codificación UTF-8 para soportar acentos y caracteres especiales -->
     <meta charset="UTF-8">
+    <!-- Compatibilidad con Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Viewport responsivo para adaptarse al dispositivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Título de la pestaña del navegador -->
     <title>VIBES</title>
 
+    <!-- Hoja de estilos CSS específica de la página Home -->
     <link rel="stylesheet" href="css/home.css">
 
+    <!-- Preconexión a Google Fonts para carga más rápida -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Carga la fuente "Inter" con múltiples pesos -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
         rel="stylesheet"
     >
 
+    <!-- Carga la librería de iconos Font Awesome para los iconos de la interfaz -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     >
 
-</head>
+</head> <!-- Fin de metadatos -->
 
-<body>
+<body> <!-- Contenido visible de la página principal (Home) -->
 
+    <!-- Contenedor para la animación de partículas del fondo -->
     <div id="particles-js"></div>
 
-    <!-- SIDEBAR -->
+    <!-- ==================== BARRA LATERAL (SIDEBAR) ==================== -->
+    <!-- Menú de navegación fijo en el lado izquierdo de la pantalla -->
 
-    <div class="side-bar">
+    <div class="side-bar"> <!-- Contenedor principal del sidebar -->
 
-        <div>
+        <div> <!-- Sección superior del sidebar -->
 
+            <!-- Logo de la aplicación en verde neón -->
             <h1 class="logo">VIBES</h1>
 
+            <!-- Menú de navegación principal con iconos Font Awesome -->
             <div class="menu">
 
+                <!-- Enlace a la página de Inicio (activa actualmente, indicado por class="active") -->
                 <a class="active" href="home.html">
-                    <i class="fa-solid fa-house"></i>
+                    <i class="fa-solid fa-house"></i> <!-- Icono de casa -->
                     Inicio
                 </a>
 
+                <!-- Enlace a la página de Búsqueda -->
                 <a href="search.html">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i> <!-- Icono de lupa -->
                     Buscar
                 </a>
 
+                <!-- Enlace a la Biblioteca de playlists del usuario -->
                 <a href="library.html">
-                    <i class="fa-solid fa-book"></i>
+                    <i class="fa-solid fa-book"></i> <!-- Icono de libro -->
                     Biblioteca
                 </a>
 
-            </div>
+            </div> <!-- Fin del menú de navegación -->
 
-        </div>
+        </div> <!-- Fin de la sección superior -->
 
+        <!-- Sección inferior del sidebar: botón de géneros y opciones de soporte -->
         <div class="bottom-section">
 
+            <!-- Botón que muestra los géneros favoritos del usuario -->
+            <!-- Al hacer clic, muestra las canciones que coinciden con sus géneros seleccionados -->
             <button class="genres-btn" style="cursor: pointer;">
                 Tus Géneros Top
             </button>
 
+            <!-- Menú inferior con accesos a configuración y soporte -->
             <div class="bottom-menu">
 
+                <!-- Botón de Ajustes: abre el modal de configuración (settings) -->
+                <!-- id="settings-btn" permite que home.js lo vincule al modal -->
                 <a href="#" id="settings-btn">
-                    <i class="fa-solid fa-gear"></i>
+                    <i class="fa-solid fa-gear"></i> <!-- Icono de engranaje -->
                     Ajustes
                 </a>
 
+                <!-- Enlace a la sección de ayuda/soporte -->
                 <a href="#">
-                    <i class="fa-solid fa-circle-question"></i>
+                    <i class="fa-solid fa-circle-question"></i> <!-- Icono de interrogación -->
                     Soporte
                 </a>
 
-            </div>
+            </div> <!-- Fin del menú inferior -->
 
-        </div>
+        </div> <!-- Fin de la sección inferior -->
 
-    </div>
+    </div> <!-- Fin del sidebar -->
 
-    <!-- MAIN CONTENT -->
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <!-- Área central derecha donde se muestra el contenido del Home -->
 
-    <div class="main-content">
+    <div class="main-content"> <!-- Contenedor del contenido principal -->
 
-        <!-- TOP BAR -->
-
+        <!-- ---- BARRA SUPERIOR ---- -->
+        <!-- Enlaces de navegación rápida y botones de acción en la parte superior -->
         <div class="top-bar">
 
+            <!-- Enlaces de secciones especiales -->
             <div class="top-links">
-
+                <!-- Enlace "Descubrir": abre el explorador de todas las canciones (modal) -->
                 <a href="#">Descubrir</a>
-
+                <!-- Enlace "Novedades": sección para nuevas canciones -->
                 <a href="#">Novedades</a>
-
+                <!-- Enlace "En Vivo": sección para contenido en vivo -->
                 <a href="#">En Vivo</a>
-
             </div>
 
+            <!-- Sección derecha: botón Premium y iconos de notificación/perfil -->
             <div class="top-right">
-
+                <!-- Botón de suscripción Premium -->
                 <button class="upgrade-btn">
                     Premium
                 </button>
-
+                <!-- Icono de campana para notificaciones -->
                 <i class="fa-regular fa-bell"></i>
-
+                <!-- Icono de perfil de usuario -->
                 <i class="fa-regular fa-circle-user"></i>
-
             </div>
 
-        </div>
+        </div> <!-- Fin de la barra superior -->
 
-        <!-- HERO -->
-
+        <!-- ---- SECCIÓN HERO (BIENVENIDA) ---- -->
+        <!-- Mensaje de bienvenida personalizado y descripción -->
         <div class="hero-section">
 
+            <!-- Título de bienvenida: el nombre del usuario se actualiza desde home.js -->
+            <!-- id="welcome-message" permite que JavaScript cambie el texto dinámicamente -->
             <h1 id="welcome-message">Bienvenido de nuevo, Marco</h1>
 
+            <!-- Texto descriptivo del sistema de recomendaciones -->
             <p>
                 Tu matriz de escucha neuronal ha sido optimizada.
                 Generando vías sonoras personalizadas según
                 tus gustos y afinidades acústicas.
             </p>
 
-        </div>
+        </div> <!-- Fin del hero -->
 
-        <!-- ANALYZE CARD -->
-
+        <!-- ---- TARJETA DE ANÁLISIS ---- -->
+        <!-- Indicador visual que muestra que el algoritmo está procesando las recomendaciones -->
         <div class="analyze-card">
 
-            <div class="analyze-left">
+            <div class="analyze-left"> <!-- Lado izquierdo con icono e info -->
 
+                <!-- Icono de onda sonora animado -->
                 <div class="music-icon">
-
                     <i class="fa-solid fa-wave-square"></i>
-
                 </div>
 
                 <div>
-
+                    <!-- Título de la tarjeta -->
                     <h3>Analizando tus vibras...</h3>
-
+                    <!-- Descripción del proceso de análisis -->
                     <p>
                         MAPEANDO AFINIDADES ESTRUCTURALES
                         EN 42 NODOS DE AUDIO RECIENTES
                     </p>
-
                 </div>
 
-            </div>
+            </div> <!-- Fin del lado izquierdo -->
 
-        </div>
+        </div> <!-- Fin de la tarjeta de análisis -->
 
-        <!-- RECOMMENDED MUSIC -->
-
+        <!-- ---- SECCIÓN DE CANCIONES RECOMENDADAS ---- -->
+        <!-- Cuadrícula de tarjetas con canciones recomendadas basadas en los gustos del usuario -->
         <div class="section-title">
-
             <h2>Canciones Recomendadas</h2>
-
         </div>
 
+        <!-- Cuadrícula donde home.js inyecta dinámicamente las tarjetas de canciones -->
+        <!-- id="recommended-songs-grid" permite que JavaScript la encuentre y llene -->
         <div class="card-grid" id="recommended-songs-grid">
-            <!-- Cargado dinámicamente -->
+            <!-- Cargado dinámicamente desde home.js -->
         </div>
 
+        <!-- ---- SECCIÓN DE ARTISTAS RECOMENDADOS ---- -->
         <div class="section-title" style="margin-top: 40px;">
-
             <h2>Artistas Recomendados</h2>
-
         </div>
 
+        <!-- Cuadrícula de tarjetas con artistas recomendados -->
         <div class="card-grid" id="recommended-artists-grid">
-            <!-- Cargado dinámicamente -->
+            <!-- Cargado dinámicamente desde home.js -->
         </div>
 
-    </div>
+    </div> <!-- Fin del contenido principal -->
 
-    <!-- PLAYER -->
+    <!-- ==================== REPRODUCTOR DE MÚSICA (PLAYER BAR) ==================== -->
+    <!-- Barra fija en la parte inferior que muestra la canción actual y controles de reproducción -->
 
-    <div class="music-player">
+    <div class="music-player"> <!-- Contenedor principal del reproductor -->
 
-        <!-- LEFT -->
-
+        <!-- ---- LADO IZQUIERDO: Información de la canción actual ---- -->
+        <!-- Enlace a la página de reproductor completo (player.html) -->
         <a href="player.html" class="song-info">
 
+            <!-- Portada/carátula de la canción actual (imagen por defecto de Unsplash) -->
             <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=100&auto=format&fit=crop">
 
             <div>
-
+                <!-- Título de la canción actual (se actualiza dinámicamente) -->
                 <h4>Ninguna sonando</h4>
-
+                <!-- Nombre del artista (se actualiza dinámicamente) -->
                 <p>VIBES</p>
-
             </div>
 
+            <!-- Icono de corazón para agregar a favoritos -->
             <i class="fa-regular fa-heart"></i>
 
-        </a>
+        </a> <!-- Fin de la info de canción -->
 
-        <!-- CENTER -->
-
+        <!-- ---- CENTRO: Controles de reproducción ---- -->
         <div class="player-controls">
 
+            <!-- Botón de reproducción aleatoria (shuffle) -->
             <i class="fa-solid fa-shuffle"></i>
-
+            <!-- Botón de canción anterior -->
             <i class="fa-solid fa-backward"></i>
 
+            <!-- Botón principal de play/pause -->
             <button class="play-btn">
-
-                <i class="fa-solid fa-play"></i>
-
+                <i class="fa-solid fa-play"></i> <!-- Icono de play (cambia a pause cuando reproduce) -->
             </button>
 
+            <!-- Botón de siguiente canción -->
             <i class="fa-solid fa-forward"></i>
-
+            <!-- Botón de repetir canción/playlist -->
             <i class="fa-solid fa-repeat"></i>
 
-        </div>
+        </div> <!-- Fin de controles -->
 
-        <!-- RIGHT -->
-
+        <!-- ---- LADO DERECHO: Tiempo y volumen ---- -->
         <div class="song-time">
 
+            <!-- Icono de dispositivo -->
             <i class="fa-solid fa-computer"></i>
 
+            <!-- Tiempo actual de reproducción -->
             <span>0:00</span>
 
+            <!-- Barra de progreso de la canción -->
             <div class="progress-bar">
-
+                <!-- Relleno que se expande según el avance de la canción -->
                 <div class="progress"></div>
-
             </div>
 
+            <!-- Tiempo total de la canción -->
             <span>0:00</span>
 
+            <!-- Icono de volumen -->
             <i class="fa-solid fa-volume-high"></i>
 
+            <!-- Barra de control de volumen -->
             <div class="volume-bar">
-
+                <!-- Relleno que indica el nivel de volumen actual -->
                 <div class="volume-progress"></div>
-
             </div>
 
-        </div>
+        </div> <!-- Fin de la sección de tiempo -->
 
-    </div>
+    </div> <!-- Fin del reproductor -->
 
-    <!-- MODAL DE CONFIGURACIÓN (SETTINGS) -->
+    <!-- ==================== MODAL DE CONFIGURACIÓN (SETTINGS) ==================== -->
+    <!-- Ventana emergente que permite cambiar el modo de base de datos y resetear la app -->
+    <!-- Inicialmente oculta (display: none), se muestra al hacer clic en "Ajustes" -->
     <div id="settings-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center;">
+        <!-- Tarjeta del modal con borde verde neón y sombra -->
         <div style="background: #0d0d0d; border: 1px solid #39FF14; border-radius: 20px; padding: 30px; width: 450px; box-shadow: 0 0 30px rgba(57,255,20,0.25); font-family: inherit;">
+            <!-- Título del modal de configuración -->
             <h3 style="color: #39FF14; font-size: 20px; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">Configuración de Sistema</h3>
             
+            <!-- Selector de modo de conexión -->
             <p style="color: #9a9a9a; font-size: 13px; margin-bottom: 8px;">Modo de Conexión</p>
+            <!-- Dropdown para elegir entre almacenamiento local y Neo4j -->
             <select id="db-mode-select" style="width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 12px; margin-bottom: 20px; outline: none; font-size: 14px; font-family: inherit;">
                 <option value="local">Almacenamiento Local (100% Offline / Para subir a Git)</option>
                 <option value="neo4j">Neo4j (Conexión Híbrida / Requiere Servidor)</option>
             </select>
 
+            <!-- Contenedor de credenciales Neo4j (oculto por defecto, se muestra si se elige Neo4j) -->
             <div id="neo4j-creds-container" style="display: none; margin-bottom: 20px;">
+                <!-- Campo para la URI del servidor Neo4j -->
                 <p style="color: #9a9a9a; font-size: 13px; margin-bottom: 8px;">URI del Servidor Neo4j</p>
                 <input type="text" id="neo4j-uri" value="neo4j+s://d544acc5.databases.neo4j.io" style="width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 12px; margin-bottom: 12px; outline: none; font-size: 13px;">
                 
+                <!-- Campo para el usuario de Neo4j -->
                 <p style="color: #9a9a9a; font-size: 13px; margin-bottom: 8px;">Usuario</p>
                 <input type="text" id="neo4j-user" value="d544acc5" style="width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 12px; margin-bottom: 12px; outline: none; font-size: 13px;">
                 
+                <!-- Campo para la contraseña de Neo4j -->
                 <p style="color: #9a9a9a; font-size: 13px; margin-bottom: 8px;">Contraseña de Seguridad</p>
                 <input type="password" id="neo4j-pass" value="3JdyXlKfIxftHD0U9-jMTni7_DWovV10M2TNscwVU1k" style="width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 12px; outline: none; font-size: 13px;">
             </div>
 
+            <!-- Fila de botones del modal: Reiniciar, Cerrar y Aplicar -->
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <!-- Botón rojo para reiniciar todos los datos de la aplicación -->
                 <button id="reset-app-btn" style="background: transparent; border: 1px solid #ff3333; color: #ff3333; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: bold; text-transform: uppercase;">Reiniciar Datos</button>
                 <div style="display: flex; gap: 12px;">
+                    <!-- Botón para cerrar el modal sin guardar cambios -->
                     <button id="close-settings-btn" style="background: transparent; border: 1px solid #555; color: white; padding: 10px 18px; border-radius: 8px; cursor: pointer;">Cerrar</button>
+                    <!-- Botón verde para guardar los cambios de configuración -->
                     <button id="save-settings-btn" style="background: #39FF14; border: none; color: black; font-weight: bold; padding: 10px 22px; border-radius: 8px; cursor: pointer; box-shadow: 0 0 15px rgba(57,255,20,0.3);">Aplicar</button>
                 </div>
             </div>
         </div>
-    </div>
+    </div> <!-- Fin del modal de configuración -->
 
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- Librería de partículas para el fondo animado -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Catálogo de canciones, artistas, géneros y moods -->
     <script src="js/catalog.js"></script>
+    <!-- Controlador global del reproductor: maneja la reproducción desde cualquier página -->
     <script src="js/player_controller.js"></script>
+    <!-- Lógica específica del Home: recomendaciones, bienvenida, settings -->
     <script src="js/home.js"></script>
-</body>
-</html>
+
+</body> <!-- Fin del contenido visible -->
+</html> <!-- Fin del documento HTML -->

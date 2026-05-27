@@ -1,428 +1,430 @@
+/* =============================================================================
+   genres.css - Estilos de la página de selección de gustos (genres.html)
+   =============================================================================
+   PROPÓSITO: Define la apariencia visual de la pantalla donde el usuario
+   selecciona sus géneros musicales, artistas favoritos y moods/estados de ánimo.
+   INCLUYE: Barra superior con progreso, cuadrículas de selección (tags, cards),
+   barra inferior fija con botón de compilar, y el campo de búsqueda/agregar.
+   ESTÉTICA: Fondo negro con partículas, acentos verde neón (#39FF14),
+   tarjetas con bordes sutiles y efectos hover de elevación.
+   ============================================================================= */
+
+/* ---- RESET UNIVERSAL ---- */
+/* Elimina márgenes y rellenos predeterminados de TODOS los elementos HTML */
+/* box-sizing: border-box hace que padding y border se incluyan dentro del ancho total */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+    margin:0;      /* Sin márgenes por defecto */
+    padding:0;     /* Sin relleno por defecto */
+    box-sizing:border-box; /* El ancho/alto incluye padding y border (modelo de caja moderno) */
 }
 
+/* ---- CUERPO DE LA PÁGINA ---- */
 body{
-    background:#050505;
-    color:white;
-    font-family:'Inter',sans-serif;
-    overflow-x:hidden;
+    background:#050505;             /* Fondo casi negro (ligeramente más claro que #000) */
+    color:white;                    /* Color de texto predeterminado: blanco */
+    font-family:'Inter',sans-serif; /* Fuente Inter de Google Fonts con fallback */
+    overflow-x:hidden;              /* Oculta scroll horizontal (previene desbordamiento lateral) */
 }
 
-/* PARTICLES */
-
+/* ---- CONTENEDOR DE PARTÍCULAS ---- */
+/* Fondo animado con partículas flotantes verdes interconectadas */
 #particles-js{
-    position:fixed;
-    width:100%;
-    height:100%;
-    z-index:-1;
+    position:fixed;  /* Posición fija: no se mueve al hacer scroll */
+    width:100%;      /* Ocupa todo el ancho */
+    height:100%;     /* Ocupa todo el alto */
+    z-index:-1;      /* Detrás de todo el contenido visible */
 }
 
-/* TOP BAR */
-
+/* ==================== BARRA SUPERIOR ==================== */
+/* Contiene el logo VIBES, el estado del perfil y la barra de progreso */
 .top-bar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:25px 40px;
-
-    border-bottom:1px solid #1f1f1f;
+    display:flex;                   /* Flexbox para distribuir los elementos horizontalmente */
+    justify-content:space-between;  /* Espacia los hijos: logo a la izquierda, progreso a la derecha */
+    align-items:center;             /* Centra verticalmente */
+    padding:25px 40px;              /* Relleno: 25px vertical, 40px horizontal */
+    border-bottom:1px solid #1f1f1f; /* Línea sutil gris oscuro separando de contenido principal */
 }
 
+/* ---- LADO IZQUIERDO DE LA BARRA ---- */
+/* Contiene el logo y la caja de estado */
 .top-left{
-    display:flex;
-    align-items:center;
-    gap:20px;
+    display:flex;        /* Flexbox horizontal */
+    align-items:center;  /* Centra verticalmente */
+    gap:20px;            /* 20px de espacio entre el logo y la caja de estado */
 }
 
+/* ---- LOGO "VIBES" EN LA BARRA ---- */
 .top-left h1{
-    color:#39FF14;
-    font-size:18px;
+    color:#39FF14;   /* Color verde neón para el nombre de la marca */
+    font-size:18px;  /* Tamaño moderado (no tan grande como en index.html) */
 }
 
+/* ---- CAJA DE ESTADO ---- */
+/* Rectángulo que muestra "INICIANDO PERFIL" */
 .status-box{
-    background:#1c1c1c;
-
-    padding:10px 18px;
-
-    border-radius:14px;
-
-    color:#b0b0b0;
-
-    font-size:12px;
+    background:#1c1c1c;  /* Fondo gris oscuro */
+    padding:10px 18px;   /* Relleno interno */
+    border-radius:14px;  /* Esquinas redondeadas */
+    color:#b0b0b0;       /* Texto gris claro */
+    font-size:12px;      /* Texto pequeño */
 }
 
+/* ---- SECCIÓN DE PROGRESO ---- */
+/* Contenedor de la barra de progreso y su cabecera */
 .progress-section{
-    width:320px;
+    width:320px;  /* Ancho fijo de 320px */
 }
 
+/* ---- CABECERA DEL PROGRESO ---- */
+/* Fila con la etiqueta "MAPEO NEURONAL" y el porcentaje */
 .progress-header{
-    display:flex;
-    justify-content:space-between;
-
-    margin-bottom:10px;
-
-    font-size:13px;
+    display:flex;                   /* Flexbox horizontal */
+    justify-content:space-between;  /* Etiqueta a la izquierda, porcentaje a la derecha */
+    margin-bottom:10px;             /* Separación de la barra visual */
+    font-size:13px;                 /* Texto pequeño */
 }
 
+/* ---- PORCENTAJE DE PROGRESO ---- */
+/* Muestra "0%", "33%", "100%", etc. en verde neón */
 .progress-percent{
-    color:#39FF14;
+    color:#39FF14;  /* Verde neón para resaltar el porcentaje */
 }
 
+/* ---- BARRA DE PROGRESO (contenedor) ---- */
+/* Rectángulo gris que contiene la barra de relleno verde */
 .progress-bar{
-    width:100%;
-    height:4px;
-
-    background:#333;
-
-    border-radius:20px;
+    width:100%;         /* Ocupa todo el ancho del contenedor padre */
+    height:4px;         /* Altura delgada: 4px (barra sutil) */
+    background:#333;    /* Fondo gris oscuro (parte vacía de la barra) */
+    border-radius:20px; /* Esquinas redondeadas */
 }
 
+/* ---- BARRA DE PROGRESO (relleno verde) ---- */
+/* Barra verde que se expande conforme el usuario selecciona más opciones */
 .progress{
-    width:40%;
-    height:100%;
-
-    background:#39FF14;
-
-    border-radius:20px;
+    width:40%;          /* Ancho inicial (se actualiza dinámicamente desde JS) */
+    height:100%;        /* Ocupa toda la altura del contenedor */
+    background:#39FF14; /* Verde neón: indica progreso completado */
+    border-radius:20px; /* Esquinas redondeadas para coincidir con el contenedor */
 }
 
-/* MAIN */
-
+/* ==================== CONTENIDO PRINCIPAL ==================== */
+/* Área central donde están las secciones de selección */
 .main-content{
-    padding:50px 40px 140px 40px;
+    padding:50px 40px 140px 40px; /* Relleno: arriba 50, lados 40, abajo 140 (espacio para barra inferior fija) */
 }
 
-/* INTRO */
-
+/* ---- SECCIÓN INTRODUCTORIA ---- */
+/* Contiene el título "Cura tu Algoritmo Musical" y las instrucciones */
 .intro-section{
-    margin-bottom:70px;
+    margin-bottom:70px; /* Gran espacio inferior antes de la primera sección de selección */
 }
 
+/* ---- TÍTULO DE LA INTRO ---- */
 .intro-section h2{
-    font-size:32px;
-
-    margin-bottom:20px;
+    font-size:32px;       /* Fuente grande para el título principal */
+    margin-bottom:20px;   /* Separación del párrafo descriptivo */
 }
 
+/* ---- PÁRRAFO DE INSTRUCCIONES ---- */
 .intro-section p{
-    color:#9a9a9a;
-
-    max-width:700px;
-
-    line-height:1.8;
+    color:#9a9a9a;     /* Gris medio: texto secundario */
+    max-width:700px;   /* Ancho máximo para legibilidad (no se extiende en pantallas anchas) */
+    line-height:1.8;   /* Interlineado generoso para buena lectura */
 }
 
-/* SECTION */
-
+/* ==================== SECCIONES DE SELECCIÓN ==================== */
+/* Cada sección (Géneros, Artistas, Moods) comparte estos estilos base */
 .section{
-    margin-bottom:70px;
+    margin-bottom:70px; /* Espacio entre secciones */
 }
 
+/* ---- CABECERA DE SECCIÓN ---- */
+/* Fila con el título (ej: "ARQUITECTURAS SONORAS") y el contador (ej: "3 / 3 MÍN") */
 .section-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding-bottom:18px;
-
-    margin-bottom:25px;
-
-    border-bottom:1px solid #1f1f1f;
+    display:flex;                   /* Flexbox horizontal */
+    justify-content:space-between;  /* Título a la izquierda, contador a la derecha */
+    align-items:center;             /* Centra verticalmente */
+    padding-bottom:18px;            /* Espacio antes del borde inferior */
+    margin-bottom:25px;             /* Espacio después del borde inferior */
+    border-bottom:1px solid #1f1f1f; /* Línea separadora sutil */
 }
 
+/* ---- TÍTULO h3 DE SECCIÓN ---- */
 .section-header h3{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    font-size:16px;
+    display:flex;        /* Flexbox para alinear icono y texto */
+    align-items:center;  /* Centra el icono verticalmente con el texto */
+    gap:10px;            /* 10px entre el icono y el texto */
+    font-size:16px;      /* Tamaño de fuente moderado */
 }
 
+/* ---- CONTADOR DE SELECCIONES ---- */
+/* Muestra "0 / 3 MÍN" o "5 / 3 MÍN" */
 .section-header span{
-    color:#9a9a9a;
+    color:#9a9a9a; /* Gris medio */
 }
 
-/* TAGS */
-
+/* ==================== CUADRÍCULA DE TAGS (GÉNEROS) ==================== */
+/* Los géneros se muestran como botones/etiquetas en una cuadrícula flexible */
 .tag-grid{
-    display:flex;
-    flex-wrap:wrap;
-
-    gap:14px;
+    display:flex;      /* Flexbox: los botones fluyen horizontalmente */
+    flex-wrap:wrap;    /* Se envuelven a la siguiente línea cuando no caben */
+    gap:14px;          /* 14px de espacio entre cada botón */
 }
 
+/* ---- BOTÓN DE GÉNERO INDIVIDUAL ---- */
+/* Cada género (Rock, Pop, etc.) es un botón dentro de la cuadrícula */
 .tag-grid button{
-    background:#1f1f1f;
-
-    border:none;
-
-    color:white;
-
-    padding:14px 24px;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    transition:0.3s;
-
-    text-transform:uppercase;
+    background:#1f1f1f;       /* Fondo gris oscuro (estado no seleccionado) */
+    border:none;               /* Sin borde visible */
+    color:white;               /* Texto blanco */
+    padding:14px 24px;         /* Relleno generoso para un botón clicable cómodo */
+    border-radius:12px;        /* Esquinas redondeadas */
+    cursor:pointer;            /* Cursor de mano al pasar por encima */
+    transition:0.3s;           /* Transición suave para hover y selección */
+    text-transform:uppercase;  /* Convierte el texto a MAYÚSCULAS */
 }
 
+/* ---- HOVER DE BOTÓN DE GÉNERO ---- */
+/* Efecto al pasar el mouse sobre un botón no seleccionado */
 .tag-grid button:hover{
-    background:#2a2a2a;
+    background:#2a2a2a; /* Fondo ligeramente más claro: retroalimentación visual */
 }
 
+/* ---- BOTÓN DE GÉNERO SELECCIONADO ---- */
+/* Estilo que se aplica cuando el usuario hace clic y selecciona un género */
+/* !important sobrescribe los estilos base para garantizar visibilidad */
 .selected-tag{
-    background:#39FF14 !important;
-
-    color:black !important;
-
+    background:#39FF14 !important;  /* Fondo verde neón: indica selección activa */
+    color:black !important;         /* Texto negro para contraste sobre fondo verde */
     box-shadow:
-    0px 0px 20px rgba(57,255,20,0.25);
+    0px 0px 20px rgba(57,255,20,0.25); /* Resplandor verde sutil alrededor del botón */
 }
 
-/* ARTISTS */
-
+/* ==================== CUADRÍCULA DE ARTISTAS ==================== */
+/* Los artistas se muestran como tarjetas con imagen en una cuadrícula de 5 columnas */
 .artist-grid{
-    display:grid;
-
-    grid-template-columns:repeat(5,1fr);
-
-    gap:20px;
+    display:grid;                          /* CSS Grid: permite columnas fijas */
+    grid-template-columns:repeat(5,1fr);   /* 5 columnas iguales (1fr = fracción proporcional) */
+    gap:20px;                              /* 20px entre cada tarjeta */
 }
 
+/* ---- TARJETA DE ARTISTA ---- */
+/* Cada artista tiene una tarjeta con imagen y nombre */
 .artist-card{
-    position:relative;
-
-    background:#0d0d0d;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    border:1px solid #1f1f1f;
-
-    transition:0.3s;
-
-    cursor:pointer;
+    position:relative;          /* Posición relativa para posicionar el icono de check absoluto */
+    background:#0d0d0d;         /* Fondo casi negro */
+    border-radius:20px;         /* Esquinas muy redondeadas */
+    overflow:hidden;            /* Oculta cualquier contenido que sobresalga (ej: esquinas de imagen) */
+    border:1px solid #1f1f1f;   /* Borde sutil gris oscuro */
+    transition:0.3s;            /* Transición suave para el efecto hover */
+    cursor:pointer;             /* Cursor de mano */
 }
 
+/* ---- HOVER DE TARJETA DE ARTISTA ---- */
+/* Al pasar el mouse, la tarjeta se eleva ligeramente */
 .artist-card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-5px); /* Mueve la tarjeta 5px hacia arriba: efecto de "flotar" */
 }
 
+/* ---- IMAGEN DEL ARTISTA ---- */
 .artist-card img{
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
+    width:100%;         /* La imagen ocupa todo el ancho de la tarjeta */
+    height:220px;       /* Altura fija de 220px */
+    object-fit:cover;   /* La imagen se recorta para cubrir el espacio sin deformarse */
 }
 
+/* ---- NOMBRE DEL ARTISTA ---- */
 .artist-card p{
-    padding:15px;
-
-    text-align:center;
+    padding:15px;        /* Relleno alrededor del nombre */
+    text-align:center;   /* Texto centrado */
 }
 
+/* ---- TARJETA DE ARTISTA SELECCIONADA ---- */
+/* Borde verde y resplandor cuando el usuario selecciona un artista */
 .selected-card{
-    border:1px solid rgba(57,255,20,0.5);
-
+    border:1px solid rgba(57,255,20,0.5); /* Borde verde semitransparente */
     box-shadow:
-    0px 0px 25px rgba(57,255,20,0.18);
+    0px 0px 25px rgba(57,255,20,0.18);    /* Resplandor verde sutil */
 }
 
+/* ---- ICONO DE CHECK (✓) EN TARJETA SELECCIONADA ---- */
+/* Círculo verde con check que aparece en la esquina superior derecha */
 .check-icon{
-    position:absolute;
-
-    top:12px;
-    right:12px;
-
-    width:26px;
-    height:26px;
-
-    background:#39FF14;
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:black;
-
-    font-size:12px;
+    position:absolute;      /* Posición absoluta respecto a la tarjeta (position:relative) */
+    top:12px;               /* 12px desde arriba */
+    right:12px;             /* 12px desde la derecha */
+    width:26px;             /* Ancho del círculo */
+    height:26px;            /* Alto del círculo */
+    background:#39FF14;     /* Fondo verde neón */
+    border-radius:50%;      /* Forma circular (50% = círculo perfecto) */
+    display:flex;           /* Flexbox para centrar el icono dentro */
+    justify-content:center; /* Centra horizontalmente */
+    align-items:center;     /* Centra verticalmente */
+    color:black;            /* Color del icono de check: negro */
+    font-size:12px;         /* Tamaño del icono de check */
 }
 
+/* ---- TARJETA DE "AGREGAR" ARTISTA ---- */
+/* Tarjeta especial con icono "+" para agregar artistas personalizados */
 .add-card{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    gap:20px;
-
-    min-height:280px;
+    display:flex;            /* Flexbox */
+    flex-direction:column;   /* Apila icono y texto verticalmente */
+    justify-content:center;  /* Centra verticalmente */
+    align-items:center;      /* Centra horizontalmente */
+    gap:20px;                /* 20px entre el icono y el texto */
+    min-height:280px;        /* Altura mínima para coincidir con las tarjetas de artistas */
 }
 
+/* ---- ICONO "+" GRANDE EN TARJETA DE AGREGAR ---- */
 .add-card i{
-    font-size:42px;
+    font-size:42px; /* Icono grande para que sea fácil de ver y clicar */
 }
 
-/* MOODS */
-
+/* ==================== CUADRÍCULA DE MOODS ==================== */
+/* Moods se muestran como tarjetas con imagen, similar a artistas */
 .mood-grid{
-    display:grid;
-
-    grid-template-columns:repeat(5,1fr);
-
-    gap:20px;
+    display:grid;                          /* CSS Grid */
+    grid-template-columns:repeat(5,1fr);   /* 5 columnas iguales */
+    gap:20px;                              /* 20px entre tarjetas */
 }
 
+/* ---- TARJETA DE MOOD ---- */
+/* Cada mood (Estudio, Fiesta, etc.) tiene una tarjeta con imagen */
 .mood-card{
-    position:relative;
-
-    background:#0d0d0d;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    border:1px solid #1f1f1f;
-
-    transition:0.3s;
-
-    cursor:pointer;
+    position:relative;          /* Para posicionar el check-icon */
+    background:#0d0d0d;         /* Fondo casi negro */
+    border-radius:20px;         /* Esquinas redondeadas */
+    overflow:hidden;            /* Oculta desbordamiento */
+    border:1px solid #1f1f1f;   /* Borde sutil */
+    transition:0.3s;            /* Transición para hover */
+    cursor:pointer;             /* Cursor de mano */
 }
 
+/* ---- HOVER DE TARJETA DE MOOD ---- */
 .mood-card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-5px); /* Efecto de elevación al pasar el mouse */
 }
 
+/* ---- IMAGEN DEL MOOD ---- */
 .mood-card img{
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
+    width:100%;         /* Ancho completo */
+    height:220px;       /* Altura fija */
+    object-fit:cover;   /* Recorta para cubrir sin deformar */
 }
 
+/* ---- TEXTO DEL MOOD ---- */
 .mood-card p{
-    padding:15px;
+    padding:15px; /* Relleno alrededor del nombre del mood */
 }
 
-/* BOTTOM */
-
+/* ==================== BARRA INFERIOR FIJA ==================== */
+/* Barra fija en la parte inferior con estado y botón de compilar */
 .bottom-bar{
-    position:fixed;
-
-    bottom:0;
-
-    width:100%;
-
-    height:90px;
-
-    background:#0d0d0d;
-
-    border-top:1px solid #1f1f1f;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:20px 40px;
+    position:fixed;                 /* Fija al fondo de la pantalla (no se mueve con scroll) */
+    bottom:0;                       /* Posicionada en el borde inferior */
+    width:100%;                     /* Ocupa todo el ancho */
+    height:90px;                    /* Altura de 90px */
+    background:#0d0d0d;             /* Fondo oscuro */
+    border-top:1px solid #1f1f1f;   /* Línea separadora superior */
+    display:flex;                   /* Flexbox horizontal */
+    justify-content:space-between;  /* Estado a la izquierda, botón a la derecha */
+    align-items:center;             /* Centra verticalmente */
+    padding:20px 40px;              /* Relleno lateral */
 }
 
+/* ---- ETIQUETA "ESTADO" ---- */
 .status-title{
-    color:#9a9a9a;
-
-    font-size:13px;
+    color:#9a9a9a;   /* Gris medio */
+    font-size:13px;  /* Texto pequeño */
 }
 
+/* ---- MENSAJE DE ESTADO ---- */
 .status-section p{
-    margin-top:8px;
+    margin-top:8px; /* Pequeño espacio entre la etiqueta y el mensaje */
 }
 
+/* ---- BOTÓN "COMPILAR ALGORITMO" ---- */
+/* Botón que finaliza la selección y redirige al home */
 .compile-btn{
-    background:#1f1f1f;
-
-    color:#777;
-
-    border:none;
-
-    padding:18px 30px;
-
-    border-radius:15px;
-
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    cursor:pointer;
-
-    transition:0.3s;
+    background:#1f1f1f;  /* Fondo gris oscuro (deshabilitado visualmente) */
+    color:#777;           /* Texto gris (indica que aún no se puede usar) */
+    border:none;          /* Sin borde */
+    padding:18px 30px;    /* Relleno generoso */
+    border-radius:15px;   /* Esquinas redondeadas */
+    display:flex;         /* Flexbox para alinear icono y texto */
+    align-items:center;   /* Centra verticalmente */
+    gap:12px;             /* 12px entre icono y texto */
+    cursor:pointer;       /* Cursor de mano */
+    transition:0.3s;      /* Transición suave para hover */
 }
 
+/* ---- HOVER DEL BOTÓN COMPILAR ---- */
+/* Se ilumina en verde cuando el usuario pasa el mouse (indica que está listo) */
 .compile-btn:hover{
-    background:#39FF14;
-
-    color:black;
+    background:#39FF14;  /* Fondo verde neón */
+    color:black;         /* Texto negro para contraste */
 }
 
-/* CUSTOM ADD CONTAINER (GENRES, ARTISTS, MOODS) */
+/* ==================== CONTENEDOR DE BÚSQUEDA/AGREGAR PERSONALIZADO ==================== */
+/* Campo de búsqueda + botón "+" para cada sección (géneros, artistas, moods) */
 .custom-add-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 25px;
-    max-width: 400px;
-    background: #0d0d0d;
-    border: 1px solid #1f1f1f;
-    border-radius: 12px;
-    padding: 6px 12px;
-    transition: 0.3s;
+    display: flex;              /* Flexbox horizontal: input + botón en la misma línea */
+    align-items: center;        /* Centra verticalmente */
+    gap: 10px;                  /* 10px entre el input y el botón */
+    margin-top: 25px;           /* Separación de la cuadrícula de opciones */
+    max-width: 400px;           /* Ancho máximo de 400px */
+    background: #0d0d0d;        /* Fondo oscuro */
+    border: 1px solid #1f1f1f;  /* Borde sutil */
+    border-radius: 12px;        /* Esquinas redondeadas */
+    padding: 6px 12px;          /* Relleno interno */
+    transition: 0.3s;           /* Transición para el efecto focus */
 }
 
+/* ---- EFECTO FOCUS DEL CONTENEDOR ---- */
+/* :focus-within se activa cuando CUALQUIER hijo del contenedor tiene foco (ej: el input) */
 .custom-add-container:focus-within {
-    border-color: #39FF14;
-    box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+    border-color: #39FF14;                       /* Borde verde neón cuando el input está activo */
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.2); /* Resplandor verde sutil */
 }
 
+/* ---- INPUT DE BÚSQUEDA DENTRO DEL CONTENEDOR ---- */
 .custom-add-container input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-family: inherit;
-    font-size: 14px;
-    padding: 8px 0;
+    flex: 1;                 /* Ocupa todo el espacio restante (el botón toma lo mínimo necesario) */
+    background: transparent; /* Fondo transparente (el contenedor padre ya tiene fondo) */
+    border: none;            /* Sin borde propio */
+    outline: none;           /* Sin outline al hacer focus */
+    color: white;            /* Texto blanco */
+    font-family: inherit;    /* Hereda la fuente del padre (Inter) */
+    font-size: 14px;         /* Tamaño de texto */
+    padding: 8px 0;          /* Relleno vertical */
 }
 
+/* ---- PLACEHOLDER DEL INPUT ---- */
+/* Estilo del texto de ejemplo cuando el campo está vacío */
 .custom-add-container input::placeholder {
-    color: #555;
+    color: #555; /* Gris oscuro para el texto placeholder */
 }
 
+/* ---- BOTÓN "+" DE AGREGAR ---- */
+/* Botón cuadrado pequeño con icono de suma */
 .custom-add-btn {
-    background: #1f1f1f;
-    border: none;
-    color: white;
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
+    background: #1f1f1f;    /* Fondo gris oscuro */
+    border: none;            /* Sin borde */
+    color: white;            /* Icono blanco */
+    width: 32px;             /* Ancho fijo cuadrado */
+    height: 32px;            /* Alto fijo cuadrado */
+    border-radius: 8px;      /* Esquinas ligeramente redondeadas */
+    cursor: pointer;         /* Cursor de mano */
+    display: flex;           /* Flexbox para centrar el icono */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    transition: 0.3s;        /* Transición para hover */
 }
 
+/* ---- HOVER DEL BOTÓN "+" ---- */
+/* Se ilumina en verde al pasar el mouse */
 .custom-add-btn:hover {
-    background: #39FF14;
-    color: black;
+    background: #39FF14; /* Fondo verde neón */
+    color: black;        /* Icono negro */
 }

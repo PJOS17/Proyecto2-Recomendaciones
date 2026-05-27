@@ -1,32 +1,54 @@
-<!DOCTYPE html>
-<html lang = "en">
-<head>
+<!DOCTYPE html> <!-- Declaración del tipo de documento: indica al navegador que este archivo es HTML5 -->
+<html lang = "en"> <!-- Etiqueta raíz del documento HTML; lang="en" define el idioma base como inglés -->
+<head> <!-- Sección <head>: contiene metadatos, enlaces a hojas de estilo y fuentes (no se muestra en pantalla) -->
+    <!-- Preconexión a Google Fonts: establece una conexión anticipada al servidor de fuentes para cargar más rápido -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconexión al CDN de fuentes estáticas de Google con soporte CORS (crossorigin) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Carga la fuente "Inter" de Google Fonts con los pesos 300 (light), 400 (normal), 600 (semi-bold) y 700 (bold) -->
+    <!-- display=swap: muestra texto con una fuente del sistema mientras se descarga "Inter", evitando texto invisible -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Define la codificación de caracteres como UTF-8 para soportar acentos, ñ y caracteres especiales -->
     <meta charset = "UTF-8">
+    <!-- Compatibilidad con Internet Explorer: fuerza el uso del motor de renderizado más reciente -->
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <!-- Configuración del viewport para diseño responsivo: el ancho se adapta al dispositivo, escala inicial 1:1 -->
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la pestaña del navegador: aparece como "Index" en la barra de pestañas -->
     <title>Index</title>
+    <!-- Enlace a la hoja de estilos CSS específica de esta página (index.css) -->
     <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
+</head> <!-- Fin de la sección <head> -->
+<body> <!-- Sección <body>: contiene todo el contenido visible de la página -->
+    <!-- Contenedor del texto de bienvenida centrado en pantalla -->
     <div class="initial-text">
+    <!-- Título principal h1: muestra el nombre/eslogan de la aplicación "INMERSIÓN INTELIGENTE" -->
     <h1>INMERSIÓN INTELIGENTE</h1>
+    <!-- Párrafo descriptivo: breve descripción de lo que hace VIBES, invitando al usuario a crear su perfil musical -->
     <p>El vacío profundo espera. Conecta tus nodos, encuentra tu ritmo,
         y experimenta tu identidad musical enriquecida</p>
-    </div>
+    </div> <!-- Fin del contenedor de texto de bienvenida -->
+    <!-- Enlace (<a>) que redirige a la página de creación de cuenta (newacc.html) al hacer clic -->
     <a href="newacc.html">
+    <!-- Botón principal verde neón "CREAR CUENTA": al pulsarlo, navega a newacc.html gracias al <a> que lo envuelve -->
     <button>CREAR CUENTA</button>
     </a>
+    <!-- Contenedor del enlace secundario para usuarios que ya tienen cuenta -->
     <div class="link">
+    <!-- Enlace que redirige a la página de inicio de sesión (login.html) -->
     <a href="login.html">
-    ¿YA TIENES UNA CUENTA? INICIA SESIÓN
+    ¿YA TIENES UNA CUENTA? INICIA SESIÓN <!-- Texto del enlace visible para el usuario -->
     </a>
-    </div>
+    </div> <!-- Fin del contenedor del enlace de inicio de sesión -->
+    <!-- Contenedor invisible donde la librería particles.js renderiza la animación de partículas del fondo -->
+    <!-- Se posiciona con CSS como fondo fijo (z-index: -1) detrás de todo el contenido -->
     <div id="particles-js"></div>
 
+    <!-- Carga la librería particles.js desde un CDN (Content Delivery Network) -->
+    <!-- particles.js genera la animación de partículas flotantes interconectadas del fondo cyberpunk -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Carga el archivo JavaScript propio de esta página (js/index.js) -->
+    <!-- Contiene la configuración de las partículas y la lógica de limpieza de sesión -->
     <script src="js/index.js"></script>
-</body>
-</html>
+</body> <!-- Fin del cuerpo del documento -->
+</html> <!-- Fin del documento HTML -->

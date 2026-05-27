@@ -1,413 +1,401 @@
+/* =============================================================================
+   home.css - Estilos de la página principal (home.html)
+   =============================================================================
+   PROPÓSITO: Define la apariencia visual de la página Home de VIBES, incluyendo:
+   - Sidebar (barra lateral) con navegación
+   - Barra superior con enlaces rápidos
+   - Sección hero de bienvenida
+   - Tarjeta de análisis
+   - Cuadrícula de canciones/artistas recomendados
+   - Reproductor de música fijo en la parte inferior
+   ESTÉTICA: Layout con sidebar fijo, contenido principal desplazable,
+   fondo oscuro con acentos verde neón y partículas.
+   ============================================================================= */
+
+/* ---- RESET UNIVERSAL ---- */
+/* Elimina márgenes/padding predeterminados y usa box-sizing moderno */
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;                  /* Sin márgenes por defecto */
+    padding: 0;                 /* Sin relleno por defecto */
+    box-sizing: border-box;     /* Padding y border incluidos dentro del ancho/alto total */
 }
 
+/* ---- CUERPO DE LA PÁGINA ---- */
 body{
-    background-color: #050505;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    overflow-x: hidden;
+    background-color: #050505;          /* Fondo casi negro */
+    color: white;                       /* Texto blanco por defecto */
+    font-family: 'Inter', sans-serif;   /* Fuente Inter */
+    display: flex;                      /* Flexbox: sidebar y contenido lado a lado */
+    overflow-x: hidden;                 /* Oculta scroll horizontal */
 }
-/* PARTICLES */
 
+/* ---- CONTENEDOR DE PARTÍCULAS ---- */
+/* Fondo animado con partículas flotantes */
 #particles-js{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    position: fixed;  /* Fijo: no se mueve con scroll */
+    width: 100%;      /* Ancho completo */
+    height: 100%;     /* Alto completo */
+    z-index: -1;      /* Detrás de todo el contenido */
 }
 
-/* SIDEBAR */
-
+/* ==================== SIDEBAR (BARRA LATERAL) ==================== */
+/* Menú de navegación fijo en el lado izquierdo */
 .side-bar{
-    width:240px;
-    height:100vh;
-
-    background:#0a0a0a;
-
-    border-right:1px solid #1f1f1f;
-
-    padding:30px;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-
-    position:fixed;
-    left:0;
-    top:0;
+    width:240px;               /* Ancho fijo de 240px */
+    height:100vh;              /* Altura: toda la pantalla */
+    background:#0a0a0a;        /* Fondo muy oscuro (ligeramente más claro que negro) */
+    border-right:1px solid #1f1f1f; /* Línea separadora derecha sutil */
+    padding:30px;              /* Relleno interno de 30px */
+    display:flex;              /* Flexbox vertical */
+    flex-direction:column;     /* Elementos apilados verticalmente */
+    justify-content:space-between; /* Distribuye: menú arriba, opciones abajo */
+    position:fixed;            /* Posición fija: no se mueve al hacer scroll */
+    left:0;                    /* Pegado al borde izquierdo */
+    top:0;                     /* Pegado al borde superior */
 }
 
+/* ---- LOGO "VIBES" EN EL SIDEBAR ---- */
 .logo{
-    font-size:42px;
-    margin-bottom:10px;
+    font-size:42px;       /* Tamaño grande del logo */
+    margin-bottom:10px;   /* Separación del menú */
 }
 
+/* ---- MENÚ DE NAVEGACIÓN ---- */
 .menu{
-    display:flex;
-    flex-direction:column;
-    gap:0px;
+    display:flex;           /* Flexbox vertical */
+    flex-direction:column;  /* Enlaces apilados verticalmente */
+    gap:0px;                /* Sin espacio extra entre enlaces */
 }
 
+/* ---- ENLACES DEL MENÚ (principal e inferior) ---- */
+/* Estilos compartidos entre menú principal y menú inferior */
 .menu a,
 .bottom-menu a{
-    text-decoration:none;
-    color:#B0B0B0;
-
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    padding:12px;
-
-    border-radius:10px;
-
-    transition:0.3s;
+    text-decoration:none;   /* Sin subrayado */
+    color:#B0B0B0;          /* Color gris claro */
+    display:flex;           /* Flexbox horizontal: icono + texto */
+    align-items:center;     /* Centra verticalmente */
+    gap:12px;               /* 12px entre icono y texto */
+    padding:12px;           /* Relleno interno */
+    border-radius:10px;     /* Esquinas redondeadas */
+    transition:0.3s;        /* Transición suave para hover */
 }
 
+/* ---- HOVER Y ESTADO ACTIVO DE ENLACES ---- */
+/* Se aplica al pasar el mouse o al enlace de la página actual */
 .menu a:hover,
 .active{
-    background:#111;
-    color:#39FF14;
+    background:#111;    /* Fondo gris oscuro sutil */
+    color:#39FF14;      /* Texto verde neón: indica activo/hover */
 }
 
+/* ---- BOTÓN "TUS GÉNEROS TOP" ---- */
+/* Botón verde en el sidebar que muestra los géneros favoritos */
 .genres-btn{
-    margin-top:10px;
-    margin-bottom:10px;
-
-    width:100%;
-
-    padding:15px;
-
-    background:#39FF14;
-
-    border:none;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    border-radius:15px;
+    margin-top:10px;        /* Margen superior */
+    margin-bottom:10px;     /* Margen inferior */
+    width:100%;             /* Ocupa todo el ancho del sidebar */
+    padding:15px;           /* Relleno generoso */
+    background:#39FF14;     /* Fondo verde neón */
+    border:none;            /* Sin borde */
+    font-weight:bold;       /* Texto en negrita */
+    cursor:pointer;         /* Cursor de mano */
+    border-radius:15px;     /* Esquinas redondeadas */
 }
 
+/* ---- MENÚ INFERIOR DEL SIDEBAR ---- */
 .bottom-menu{
-    display:flex;
-    flex-direction:column;
-    gap:0px;
+    display:flex;           /* Flexbox vertical */
+    flex-direction:column;  /* Apilados verticalmente */
+    gap:0px;                /* Sin espacio extra */
 }
 
-/* MAIN */
-
+/* ==================== CONTENIDO PRINCIPAL ==================== */
+/* Área central derecha que muestra las recomendaciones */
 .main-content{
-    margin-left:240px;
-
-    flex:1;
-
-    height:100vh;
-
-    overflow-y:auto;
-
-    padding:40px;
-
-    padding-bottom:160px;
+    margin-left:240px;      /* Desplazado 240px a la derecha para dejar espacio al sidebar */
+    flex:1;                 /* Ocupa todo el espacio restante */
+    height:100vh;           /* Altura completa */
+    overflow-y:auto;        /* Permite scroll vertical dentro del contenido */
+    padding:40px;           /* Relleno de 40px en todos los lados */
+    padding-bottom:160px;   /* Relleno inferior extra para no tapar con el reproductor fijo */
 }
 
-/* TOP BAR */
-
+/* ==================== BARRA SUPERIOR ==================== */
+/* Fila con enlaces de navegación y botones de acción */
 .top-bar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-bottom: 60px;
-    margin-top: -10px;
+    display: flex;                   /* Flexbox horizontal */
+    justify-content: space-between;  /* Distribuye: enlaces izquierda, botones derecha */
+    align-items: center;             /* Centra verticalmente */
+    margin-bottom: 60px;             /* Gran margen inferior */
+    margin-top: -10px;               /* Margen negativo para ajustar posición */
 }
 
+/* ---- ENLACES DE NAVEGACIÓN RÁPIDA ---- */
 .top-links{
-    display: flex;
-    gap: 30px;
+    display: flex;  /* Flexbox horizontal */
+    gap: 30px;      /* 30px entre cada enlace */
 }
 
+/* ---- ESTILOS DE ENLACES SUPERIORES ---- */
 .top-links a{
-    color: #B0B0B0;
-    text-decoration: none;
-    transition: 0.3s;
+    color: #B0B0B0;          /* Gris claro */
+    text-decoration: none;    /* Sin subrayado */
+    transition: 0.3s;         /* Transición suave */
 }
 
+/* ---- HOVER DE ENLACES SUPERIORES ---- */
 .top-links a:hover{
-    color: white;
+    color: white;  /* Blanco al pasar el mouse */
 }
 
+/* ---- SECCIÓN DERECHA DE LA BARRA ---- */
 .top-right{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: flex;        /* Flexbox horizontal */
+    align-items: center;  /* Centra verticalmente */
+    gap: 20px;            /* 20px entre elementos */
 }
 
+/* ---- ICONOS DE LA BARRA DERECHA ---- */
 .top-right i{
-    cursor: pointer;
+    cursor: pointer;  /* Cursor de mano al pasar */
 }
 
-/* BUTTON */
-
+/* ---- BOTÓN PREMIUM ---- */
+/* Botón verde neón para la suscripción Premium */
 .upgrade-btn{
-    background-color: #39FF14;
-    color: black;
-
-    border: none;
-
-    padding: 12px 30px;
-
-    border-radius: 30px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
+    background-color: #39FF14;  /* Fondo verde neón */
+    color: black;               /* Texto negro */
+    border: none;               /* Sin borde */
+    padding: 12px 30px;         /* Relleno */
+    border-radius: 30px;        /* Forma de píldora */
+    font-weight: bold;          /* Negrita */
+    cursor: pointer;            /* Cursor de mano */
+    transition: 0.3s;           /* Transición suave */
 }
 
+/* ---- HOVER DEL BOTÓN PREMIUM ---- */
 .upgrade-btn:hover{
-    transform: scale(1.05);
+    transform: scale(1.05);  /* Se agranda un 5% al pasar el mouse */
 }
 
-/* HERO */
-
+/* ==================== SECCIÓN HERO ==================== */
+/* Área de bienvenida con título grande */
 .hero-section{
-    margin-bottom: 40px;
+    margin-bottom: 40px;  /* Separación del contenido inferior */
 }
 
+/* ---- TÍTULO DE BIENVENIDA ---- */
 .hero-section h1{
-    font-size: 64px;
-    margin-bottom: 15px;
+    font-size: 64px;       /* Fuente muy grande: impacto visual máximo */
+    margin-bottom: 15px;   /* Separación del párrafo */
 }
 
+/* ---- TEXTO DESCRIPTIVO ---- */
 .hero-section p{
-    color: #9a9a9a;
-    line-height: 1.6;
-    max-width: 700px;
+    color: #9a9a9a;     /* Gris medio */
+    line-height: 1.6;   /* Interlineado cómodo */
+    max-width: 700px;   /* Ancho máximo para legibilidad */
 }
 
-/* ANALYZE CARD */
-
+/* ==================== TARJETA DE ANÁLISIS ==================== */
+/* Indicador visual del proceso de recomendaciones */
 .analyze-card{
-    width: 100%;
-    height: 120px;
-
-    background-color: #0d0d0d;
-
-    border: 1px solid rgba(57,255,20,0.2);
-
-    border-radius: 20px;
-
-    display: flex;
-    align-items: center;
-
-    padding: 30px;
-
-    margin-bottom: 60px;
-
-    box-shadow:
-    0px 0px 20px rgba(57,255,20,0.1);
+    width: 100%;                                /* Ancho completo */
+    height: 120px;                              /* Altura fija */
+    background-color: #0d0d0d;                  /* Fondo oscuro */
+    border: 1px solid rgba(57,255,20,0.2);      /* Borde verde semitransparente */
+    border-radius: 20px;                        /* Esquinas redondeadas */
+    display: flex;                              /* Flexbox */
+    align-items: center;                        /* Centra verticalmente */
+    padding: 30px;                              /* Relleno */
+    margin-bottom: 60px;                        /* Separación inferior */
+    box-shadow: 0px 0px 20px rgba(57,255,20,0.1); /* Resplandor verde sutil */
 }
 
+/* ---- LADO IZQUIERDO DE LA TARJETA ---- */
 .analyze-left{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: flex;       /* Flexbox horizontal: icono + texto */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px;           /* 20px entre icono y texto */
 }
 
+/* ---- ICONO DE ONDA SONORA ---- */
 .music-icon{
-    width: 60px;
+    width: 60px;                         /* Cuadrado de 60x60px */
     height: 60px;
-
-    border-radius: 15px;
-
-    background-color: #141414;
-
-    border: 1px solid #39FF14;
-
-    display: flex;
+    border-radius: 15px;                 /* Esquinas redondeadas */
+    background-color: #141414;           /* Fondo oscuro */
+    border: 1px solid #39FF14;           /* Borde verde neón */
+    display: flex;                       /* Flexbox para centrar */
     justify-content: center;
     align-items: center;
 }
 
+/* ---- COLOR DEL ICONO ---- */
 .music-icon i{
-    color: #39FF14;
+    color: #39FF14;  /* Verde neón */
 }
 
-/* SECTION */
-
+/* ==================== SECCIÓN DE TÍTULOS ==================== */
 .section-title{
-    margin-bottom: 30px;
+    margin-bottom: 30px;  /* Separación de la cuadrícula */
 }
 
 .section-title h2{
-    font-size: 32px;
+    font-size: 32px;  /* Tamaño de título de sección */
 }
 
-/* GRID */
-
+/* ==================== CUADRÍCULA DE TARJETAS ==================== */
+/* Grid de 4 columnas para las tarjetas de canciones/artistas */
 .card-grid{
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 25px;
+    display: grid;                          /* CSS Grid */
+    grid-template-columns: repeat(4, 1fr);  /* 4 columnas iguales */
+    gap: 25px;                              /* 25px entre tarjetas */
 }
 
-/* MUSIC CARD */
-
+/* ==================== TARJETA DE MÚSICA ==================== */
+/* Cada canción o artista se muestra como una tarjeta */
 .music-card{
-    background-color: #0d0d0d;
-
-    border-radius: 20px;
-
-    padding: 15px;
-
-    transition: 0.3s;
-
-    cursor: pointer;
+    background-color: #0d0d0d;  /* Fondo oscuro */
+    border-radius: 20px;        /* Esquinas redondeadas */
+    padding: 15px;              /* Relleno interno */
+    transition: 0.3s;           /* Transición suave para hover */
+    cursor: pointer;            /* Cursor de mano */
 }
 
+/* ---- HOVER DE TARJETA ---- */
 .music-card:hover{
-    transform: translateY(-5px);
-
-    box-shadow:
-    0px 0px 20px rgba(57,255,20,0.15);
+    transform: translateY(-5px);                     /* Efecto de elevación */
+    box-shadow: 0px 0px 20px rgba(57,255,20,0.15);  /* Resplandor verde sutil */
 }
 
+/* ---- IMAGEN DE LA TARJETA ---- */
 .music-card img{
-    width: 100%;
-
-    border-radius: 12px;
-
-    margin-bottom: 15px;
+    width: 100%;         /* Ocupa todo el ancho */
+    border-radius: 12px; /* Esquinas redondeadas */
+    margin-bottom: 15px; /* Separación del texto */
 }
 
+/* ---- TÍTULO DE LA TARJETA ---- */
 .music-card h4{
-    margin-bottom: 8px;
+    margin-bottom: 8px;  /* Separación del subtítulo */
 }
 
+/* ---- SUBTÍTULO DE LA TARJETA ---- */
 .music-card p{
-    color: #9a9a9a;
-    font-size: 14px;
+    color: #9a9a9a;   /* Gris medio */
+    font-size: 14px;  /* Texto pequeño */
 }
 
-/* PLAYER */
-
+/* ==================== REPRODUCTOR DE MÚSICA ==================== */
+/* Barra fija en la parte inferior de la pantalla */
 .music-player{
-    position:fixed;
-
-    bottom:0;
-    left:240px;
-
-    width:calc(100% - 240px);
-
-    height:90px;
-
-    background:#050505;
-
-    border-top:1px solid #1f1f1f;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:20px 40px;
+    position:fixed;                  /* Fijo: siempre visible */
+    bottom:0;                        /* Pegado al fondo */
+    left:240px;                      /* Desplazado para no cubrir el sidebar */
+    width:calc(100% - 240px);        /* Ancho = pantalla - sidebar */
+    height:90px;                     /* Altura de 90px */
+    background:#050505;              /* Fondo oscuro */
+    border-top:1px solid #1f1f1f;    /* Línea separadora superior */
+    display:flex;                    /* Flexbox horizontal */
+    justify-content:space-between;   /* Distribuye: info izquierda, controles centro, tiempo derecha */
+    align-items:center;              /* Centra verticalmente */
+    padding:20px 40px;               /* Relleno lateral */
 }
 
+/* ---- INFORMACIÓN DE LA CANCIÓN (izquierda del player) ---- */
 .song-info{
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    text-decoration: none;
-    color: white;
+    display: flex;         /* Flexbox horizontal: portada + info */
+    align-items: center;   /* Centra verticalmente */
+    gap: 24px;             /* Espacio entre portada y texto */
+    text-decoration: none; /* Sin subrayado (es un enlace) */
+    color: white;          /* Texto blanco */
 }
 
+/* ---- PORTADA DE LA CANCIÓN ---- */
 .song-info img{
-    width:60px;
+    width:60px;         /* 60x60px cuadrada */
     height:60px;
-
-    border-radius:10px;
+    border-radius:10px; /* Esquinas redondeadas */
 }
+
+/* ---- NOMBRE DEL ARTISTA ---- */
 .song-info p{
-    color: #8a8a8a;
-    font-size: 14px;
+    color: #8a8a8a;   /* Gris medio */
+    font-size: 14px;  /* Texto pequeño */
 }
 
+/* ---- CONTROLES DE REPRODUCCIÓN (centro del player) ---- */
 .player-controls{
-    display:flex;
-    align-items:center;
-    gap:20px;
+    display:flex;       /* Flexbox horizontal */
+    align-items:center; /* Centra verticalmente */
+    gap:20px;           /* 20px entre cada control */
 }
 
+/* ---- BOTÓN PLAY/PAUSE ---- */
+/* Botón circular verde principal */
 .play-btn{
-    width:50px;
+    width:50px;          /* 50x50px */
     height:50px;
-
-    border-radius:50%;
-
-    border:none;
-
-    background:#39FF14;
-
-    cursor:pointer;
+    border-radius:50%;   /* Circular */
+    border:none;         /* Sin borde */
+    background:#39FF14;  /* Fondo verde neón */
+    cursor:pointer;      /* Cursor de mano */
 }
 
+/* ---- SECCIÓN DE TIEMPO (derecha del player) ---- */
 .song-time{
-    display:flex;
-    align-items:center;
-    gap:15px;
+    display:flex;       /* Flexbox horizontal */
+    align-items:center; /* Centra verticalmente */
+    gap:15px;           /* 15px entre elementos */
 }
 
+/* ---- BARRA DE PROGRESO DE LA CANCIÓN ---- */
 .progress-bar{
-    width:200px;
-    height:4px;
-
-    background:#333;
-
-    border-radius:20px;
+    width:200px;        /* Ancho de 200px */
+    height:4px;         /* Delgada: 4px */
+    background:#333;    /* Fondo gris (parte vacía) */
+    border-radius:20px; /* Redondeada */
 }
 
+/* ---- RELLENO DE PROGRESO ---- */
 .progress{
-    width:40%;
-    height:100%;
-
-    background:#39FF14;
-
-    border-radius:20px;
+    width:40%;          /* Se actualiza dinámicamente desde JS */
+    height:100%;        /* Altura completa del contenedor */
+    background:#39FF14; /* Verde neón */
+    border-radius:20px; /* Redondeada */
 }
 
+/* ---- BARRA DE VOLUMEN ---- */
 .volume-bar{
-    width:100px;
-    height:4px;
-
-    background:#333;
-
-    border-radius:20px;
+    width:100px;        /* Más corta que la de progreso */
+    height:4px;         /* Misma altura */
+    background:#333;    /* Fondo gris */
+    border-radius:20px; /* Redondeada */
 }
 
+/* ---- RELLENO DE VOLUMEN ---- */
 .volume-progress{
-    width:70%;
+    width:70%;          /* 70% de volumen por defecto */
     height:100%;
-
-    background:#39FF14;
-
+    background:#39FF14; /* Verde neón */
     border-radius:20px;
 }
 
+/* ---- ICONOS INTERACTIVOS DEL PLAYER ---- */
+/* Cursor de mano y transición para todos los iconos clicables */
 .player-controls i,
 .song-time i,
 .song-info i{
-    cursor:pointer;
-    transition:0.3s;
+    cursor:pointer;    /* Cursor de mano */
+    transition:0.3s;   /* Transición suave */
 }
+
+/* ---- HOVER DE ICONOS ---- */
+/* Se vuelven verde neón al pasar el mouse */
 .player-controls i:hover,
 .song-time i:hover,
 .song-info i:hover{
-    color:#39FF14;
+    color:#39FF14;  /* Verde neón */
 }

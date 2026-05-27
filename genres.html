@@ -1,198 +1,260 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declaración HTML5: indica al navegador que interprete este archivo como HTML5 -->
+<html lang="en"> <!-- Etiqueta raíz del documento HTML -->
 
-<head>
+<head> <!-- Sección de metadatos: enlaces a hojas de estilo, fuentes, configuración del documento -->
 
+    <!-- Codificación de caracteres UTF-8 para soportar acentos, ñ y símbolos especiales -->
     <meta charset="UTF-8">
+    <!-- Compatibilidad con Internet Explorer: fuerza el motor de renderizado más moderno -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Viewport responsivo: adapta el ancho al dispositivo y establece escala 1:1 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Título de la pestaña del navegador -->
     <title>Genres</title>
 
+    <!-- Hoja de estilos CSS específica de esta página (genres.css) -->
     <link rel="stylesheet" href="css/genres.css">
 
+    <!-- Preconexión a Google Fonts para carga anticipada de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconexión al CDN de fuentes estáticas con soporte CORS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Carga la fuente "Inter" con pesos 300, 400, 600 y 700 -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
         rel="stylesheet"
     >
 
+    <!-- Carga la librería de iconos Font Awesome 6.5.1 (iconos vectoriales como diamante, cerebro, vinilo, etc.) -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     >
 
-</head>
+</head> <!-- Fin de metadatos -->
 
-<body>
+<body> <!-- Contenido visible de la página de selección de gustos musicales -->
 
+    <!-- Contenedor para la animación de partículas flotantes del fondo (particles.js) -->
+    <!-- Se renderiza como fondo fijo con z-index:-1 para quedar detrás del contenido -->
     <div id="particles-js"></div>
 
-    <!-- TOP BAR -->
+    <!-- ==================== BARRA SUPERIOR ==================== -->
+    <!-- Contiene el logo, el estado actual y la barra de progreso del perfil -->
 
-    <div class="top-bar">
+    <div class="top-bar"> <!-- Contenedor principal de la barra superior -->
 
-        <div class="top-left">
+        <div class="top-left"> <!-- Lado izquierdo: logo y estado -->
 
+            <!-- Logo de la aplicación en verde neón -->
             <h1>VIBES</h1>
 
+            <!-- Caja de estado que muestra la etapa actual del proceso de registro -->
             <div class="status-box">
-                INICIANDO PERFIL
+                INICIANDO PERFIL <!-- Texto que indica al usuario que está configurando su perfil -->
             </div>
 
-        </div>
+        </div> <!-- Fin del lado izquierdo -->
 
+        <!-- Sección de la barra de progreso: muestra qué tan avanzado está el usuario -->
         <div class="progress-section">
 
-            <div class="progress-header">
+            <div class="progress-header"> <!-- Cabecera con etiqueta y porcentaje -->
 
+                <!-- Etiqueta descriptiva del progreso -->
                 <span>MAPEO NEURONAL</span>
 
+                <!-- Porcentaje de progreso: se actualiza dinámicamente desde genres.js -->
+                <!-- Empieza en 0% y sube conforme el usuario selecciona géneros, artistas y moods -->
                 <span class="progress-percent">0%</span>
 
-            </div>
+            </div> <!-- Fin de la cabecera de progreso -->
 
+            <!-- Barra visual de progreso: contenedor gris con relleno verde -->
             <div class="progress-bar">
 
+                <!-- Relleno verde de la barra de progreso -->
+                <!-- El ancho (width) se actualiza dinámicamente desde genres.js -->
                 <div class="progress" style="width: 0%;"></div>
 
-            </div>
+            </div> <!-- Fin de la barra de progreso -->
 
-        </div>
+        </div> <!-- Fin de la sección de progreso -->
 
-    </div>
+    </div> <!-- Fin de la barra superior -->
 
-    <!-- MAIN -->
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <!-- Tres secciones donde el usuario selecciona sus preferencias: Géneros, Artistas y Moods -->
 
-    <div class="main-content">
+    <div class="main-content"> <!-- Contenedor principal del contenido -->
 
-        <!-- INTRO -->
+        <!-- ---- SECCIÓN INTRODUCTORIA ---- -->
+        <!-- Título y descripción de lo que debe hacer el usuario -->
 
         <div class="intro-section">
 
+            <!-- Título principal de la página -->
             <h2>Cura tu Algoritmo Musical</h2>
 
+            <!-- Instrucciones para el usuario: debe seleccionar mínimo 3 en cada categoría -->
             <p>
                 Selecciona los puntos de datos que definen tu identidad auditiva.
                 Se requiere un mínimo de 3 selecciones por módulo para compilar tu perfil.
             </p>
 
-        </div>
+        </div> <!-- Fin de la intro -->
 
-        <!-- GÉNEROS -->
+        <!-- ==================== SECCIÓN DE GÉNEROS ==================== -->
+        <!-- El usuario selecciona géneros musicales (Rock, Pop, Reggaetón, etc.) -->
 
-        <div class="section">
+        <div class="section"> <!-- Contenedor de la sección de géneros -->
 
-            <div class="section-header">
+            <div class="section-header"> <!-- Cabecera con título y contador -->
 
                 <h3>
+                    <!-- Icono de diamante de Font Awesome -->
                     <i class="fa-solid fa-diamond"></i>
-                    ARQUITECTURAS SONORAS (GÉNEROS)
+                    ARQUITECTURAS SONORAS (GÉNEROS) <!-- Título estilizado para la sección de géneros -->
                 </h3>
 
+                <!-- Contador de selecciones: se actualiza dinámicamente (ej: "3 / 3 MÍN") -->
                 <span>0 / 3 MÍN</span>
 
-            </div>
+            </div> <!-- Fin de la cabecera -->
 
+            <!-- Cuadrícula donde se muestran los botones de géneros -->
+            <!-- Los botones se inyectan dinámicamente desde genres.js usando datos de catalog.js -->
             <div class="tag-grid">
                 <!-- Inyectado dinámicamente -->
             </div>
 
+            <!-- Contenedor de búsqueda/agregar personalizado para géneros -->
             <div class="custom-add-container">
+                <!-- Campo de búsqueda: permite filtrar géneros existentes o escribir uno nuevo -->
                 <input type="text" id="genre-search" placeholder="Buscar o agregar género personalizado...">
+                <!-- Botón "+" para agregar un género personalizado que no esté en la lista -->
                 <button id="genre-add-btn" class="custom-add-btn"><i class="fa-solid fa-plus"></i></button>
             </div>
 
-        </div>
+        </div> <!-- Fin de la sección de géneros -->
 
-        <!-- ARTISTAS -->
+        <!-- ==================== SECCIÓN DE ARTISTAS ==================== -->
+        <!-- El usuario selecciona artistas o grupos musicales favoritos -->
 
-        <div class="section">
+        <div class="section"> <!-- Contenedor de la sección de artistas -->
 
-            <div class="section-header">
+            <div class="section-header"> <!-- Cabecera con título y contador -->
 
                 <h3>
+                    <!-- Icono de disco de vinilo de Font Awesome -->
                     <i class="fa-solid fa-record-vinyl"></i>
-                    NODOS PRIMARIOS (ARTISTAS / GRUPOS)
+                    NODOS PRIMARIOS (ARTISTAS / GRUPOS) <!-- Título estilizado para artistas -->
                 </h3>
 
+                <!-- Contador de artistas seleccionados -->
                 <span>0 / 3 MÍN</span>
 
-            </div>
+            </div> <!-- Fin de la cabecera -->
 
+            <!-- Cuadrícula donde se muestran las tarjetas de artistas con imágenes -->
+            <!-- Se inyectan dinámicamente desde genres.js con datos de catalog.js -->
             <div class="artist-grid">
                 <!-- Inyectado dinámicamente -->
             </div>
 
+            <!-- Contenedor de búsqueda/agregar para artistas -->
             <div class="custom-add-container">
+                <!-- Campo para buscar o agregar un artista/grupo que no esté listado -->
                 <input type="text" id="artist-search" placeholder="Buscar o agregar artista o grupo...">
+                <!-- Botón "+" para agregar artista personalizado -->
                 <button id="artist-add-btn" class="custom-add-btn"><i class="fa-solid fa-plus"></i></button>
             </div>
 
-        </div>
+        </div> <!-- Fin de la sección de artistas -->
 
-        <!-- MOODS -->
+        <!-- ==================== SECCIÓN DE MOODS ==================== -->
+        <!-- El usuario selecciona estados de ánimo / situaciones (Estudio, Fiesta, Relajación, etc.) -->
 
-        <div class="section">
+        <div class="section"> <!-- Contenedor de la sección de moods -->
 
-            <div class="section-header">
+            <div class="section-header"> <!-- Cabecera con título y contador -->
 
                 <h3>
+                    <!-- Icono de cerebro de Font Awesome -->
                     <i class="fa-solid fa-brain"></i>
-                    ESTADOS COGNITIVOS (MOODS)
+                    ESTADOS COGNITIVOS (MOODS) <!-- Título estilizado para moods -->
                 </h3>
 
+                <!-- Contador de moods seleccionados -->
                 <span>0 / 3 MÍN</span>
 
-            </div>
+            </div> <!-- Fin de la cabecera -->
 
+            <!-- Cuadrícula donde se muestran las tarjetas de moods con imágenes -->
             <div class="mood-grid">
                 <!-- Inyectado dinámicamente -->
             </div>
 
+            <!-- Contenedor de búsqueda/agregar para moods -->
             <div class="custom-add-container">
+                <!-- Campo para buscar o agregar un mood/estado -->
                 <input type="text" id="mood-search" placeholder="Buscar o agregar estado/mood conocido...">
+                <!-- Botón "+" para agregar mood personalizado -->
                 <button id="mood-add-btn" class="custom-add-btn"><i class="fa-solid fa-plus"></i></button>
             </div>
 
-        </div>
+        </div> <!-- Fin de la sección de moods -->
 
-    </div>
+    </div> <!-- Fin del contenido principal -->
 
-    <!-- BOTTOM -->
+    <!-- ==================== BARRA INFERIOR FIJA ==================== -->
+    <!-- Muestra el estado actual y el botón para compilar el perfil -->
 
-    <div class="bottom-bar">
+    <div class="bottom-bar"> <!-- Barra inferior fija al fondo de la pantalla -->
 
-        <div class="status-section">
+        <div class="status-section"> <!-- Sección de estado -->
 
+            <!-- Etiqueta "ESTADO" -->
             <span class="status-title">
                 ESTADO
             </span>
 
+            <!-- Mensaje de estado dinámico: se actualiza desde genres.js según las selecciones -->
+            <!-- Cambia de "Esperando Entrada de Datos" a "Perfil Compilado" cuando se completa -->
             <p>Esperando Entrada de Datos</p>
 
-        </div>
+        </div> <!-- Fin de la sección de estado -->
 
+        <!-- Enlace que redirige a home.html (la página principal después de completar el perfil) -->
         <a href="home.html">
 
+            <!-- Botón para compilar/finalizar la selección de preferencias -->
+            <!-- Visualmente gris por defecto, se vuelve verde cuando se cumplen los mínimos -->
             <button class="compile-btn">
 
+                <!-- Icono de nodos conectados (red neuronal) de Font Awesome -->
                 <i class="fa-solid fa-circle-nodes"></i>
 
-                COMPILAR ALGORITMO
+                COMPILAR ALGORITMO <!-- Texto del botón -->
 
             </button>
 
         </a>
 
-    </div>
+    </div> <!-- Fin de la barra inferior -->
 
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- Carga la librería particles.js para la animación del fondo -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Carga el catálogo de canciones, artistas y géneros (datos de la aplicación) -->
+    <!-- catalog.js define el array VIBES_CATALOG con todas las canciones y sus metadatos -->
     <script src="js/catalog.js"></script>
+    <!-- Carga la lógica de selección de géneros, artistas y moods -->
+    <!-- genres.js maneja los clics, la búsqueda, la barra de progreso y el guardado de preferencias -->
     <script src="js/genres.js"></script>
 
-</body>
+</body> <!-- Fin del contenido visible -->
 
-</html>
+</html> <!-- Fin del documento HTML -->

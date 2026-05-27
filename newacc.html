@@ -1,29 +1,56 @@
-<!DOCTYPE html>
-<html lang = "en">
-<head>
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html lang = "en"> <!-- Elemento raíz del documento HTML; lang="en" define el idioma base -->
+<head> <!-- Sección de metadatos del documento (no visible en pantalla) -->
+    <!-- Preconexión a Google Fonts: establece conexión anticipada para cargar fuentes más rápido -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconexión al CDN de fuentes estáticas de Google con soporte CORS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Carga la fuente "Inter" con pesos 300, 400, 600 y 700 desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Codificación UTF-8 para soportar caracteres especiales (acentos, ñ, etc.) -->
     <meta charset = "UTF-8">
+    <!-- Compatibilidad con Internet Explorer: usa el motor de renderizado más moderno -->
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <!-- Viewport responsivo: el ancho se adapta al dispositivo del usuario -->
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la pestaña del navegador -->
     <title>Login</title>
+    <!-- Enlace a la hoja de estilos CSS compartida con la página de login (mismo diseño visual) -->
     <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
+</head> <!-- Fin de los metadatos -->
+<body> <!-- Contenido visible de la página -->
+    <!-- Sección del logo y título de la marca -->
     <div class="logo-section">
+    <!-- Nombre de la aplicación: "VIBES" como título principal -->
     <h1>VIBES</h1>
+    <!-- Subtítulo que indica la acción actual: registrar un nuevo perfil -->
     <p>REGISTRAR PERFIL</p></div>
+    <!-- Tarjeta de formulario de registro: contiene los campos de usuario y contraseña -->
     <div class="login-card">
+    <!-- Título dentro de la tarjeta que describe el propósito del formulario -->
     <h2>Crear Perfil de Acceso</h2>
+    <!-- Etiqueta del campo de usuario -->
     <p>Usuario</p>
+    <!-- Campo de texto para que el usuario ingrese su nombre de usuario deseado -->
+    <!-- id="username": permite acceder a este campo desde JavaScript para leer su valor -->
     <input type="text" id="username" placeholder="Crea tu usuario">
+    <!-- Etiqueta del campo de contraseña -->
     <p>Contraseña</p>
+    <!-- Campo de contraseña: type="password" oculta los caracteres escritos con puntos -->
+    <!-- id="password": permite acceder a este campo desde JavaScript -->
     <input type="password" id="password" placeholder="Crea tu clave de seguridad">
+    <!-- Botón de registro: al hacer clic, ejecuta la lógica de registro en newacc.js -->
+    <!-- id="register-btn": identificador para asociar el evento click en JavaScript -->
+    <!-- style="cursor: pointer;": muestra el cursor de mano al pasar el mouse -->
     <button id="register-btn" style="cursor: pointer;">Registrar >></button>
+    <!-- Div para mostrar mensajes de error (ej: "El usuario ya existe") -->
+    <!-- Inicialmente oculto (display: none), se muestra dinámicamente desde JavaScript -->
+    <!-- Estilos inline: texto rojo, borde rojo, fondo rojo semitransparente -->
     <div id="error-message" style="color: #ff3333; margin-top: 15px; font-size: 13px; font-weight: 600; display: none; text-align: center; border: 1px solid #ff3333; padding: 8px; border-radius: 4px; background: rgba(255,51,51,0.1);"></div>
-    </div>
+    </div> <!-- Fin de la tarjeta de registro -->
 
+    <!-- Carga el archivo JavaScript con la lógica de creación de cuentas -->
+    <!-- newacc.js maneja la validación, almacenamiento local y comunicación con el servidor -->
     <script src="js/newacc.js"></script>
-</body>
-</html>
+</body> <!-- Fin del contenido visible -->
+</html> <!-- Fin del documento HTML -->

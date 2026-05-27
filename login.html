@@ -1,29 +1,54 @@
-<!DOCTYPE html>
-<html lang = "en">
-<head>
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html lang = "en"> <!-- Elemento raíz del documento; lang="en" define el idioma base -->
+<head> <!-- Sección de metadatos del documento -->
+    <!-- Preconexión a Google Fonts para carga más rápida de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconexión al CDN de fuentes estáticas con CORS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Carga la fuente "Inter" con los pesos 300, 400, 600 y 700 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Codificación UTF-8 para soportar acentos y caracteres especiales -->
     <meta charset = "UTF-8">
+    <!-- Compatibilidad con Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <!-- Viewport responsivo para adaptarse al dispositivo del usuario -->
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la pestaña del navegador -->
     <title>Login</title>
+    <!-- Hoja de estilos CSS para la página de login (compartida con newacc.html) -->
     <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
+</head> <!-- Fin de metadatos -->
+<body> <!-- Contenido visible de la página -->
+    <!-- Sección del logo y marca -->
     <div class="logo-section">
+    <!-- Nombre de la aplicación como título principal -->
     <h1>VIBES</h1>
+    <!-- Subtítulo indicando que es la pantalla de inicio de sesión -->
     <p>INICIALIZAR PERFIL</p></div>
+    <!-- Tarjeta de formulario de inicio de sesión -->
     <div class="login-card">
+    <!-- Título del formulario -->
     <h2>Acceso al Sistema</h2>
+    <!-- Etiqueta del campo de usuario -->
     <p>Usuario</p>
+    <!-- Campo de texto para ingresar el nombre de usuario existente -->
+    <!-- id="username": se usa en login.js para leer el valor ingresado -->
     <input type="text" id="username" placeholder="Ingresa tu usuario">
+    <!-- Etiqueta del campo de contraseña -->
     <p>Contraseña</p>
+    <!-- Campo de contraseña: los caracteres se ocultan automáticamente -->
+    <!-- id="password": se usa en login.js para leer el valor ingresado -->
     <input type="password" id="password" placeholder="Ingresa tu clave de seguridad">
+    <!-- Botón de inicio de sesión: ejecuta la verificación de credenciales en login.js -->
+    <!-- id="login-btn": identificador para el evento click en JavaScript -->
     <button id="login-btn" style="cursor: pointer;">Iniciar >></button>
+    <!-- Contenedor para mensajes de error (ej: "Credenciales incorrectas") -->
+    <!-- Oculto por defecto (display: none), se activa desde JavaScript -->
     <div id="error-message" style="color: #ff3333; margin-top: 15px; font-size: 13px; font-weight: 600; display: none; text-align: center; border: 1px solid #ff3333; padding: 8px; border-radius: 4px; background: rgba(255,51,51,0.1);"></div>
-    </div>
+    </div> <!-- Fin de la tarjeta de login -->
 
+    <!-- Carga el JavaScript con la lógica de inicio de sesión -->
+    <!-- login.js verifica credenciales contra localStorage o el servidor Flask -->
     <script src="js/login.js"></script>
-</body>
-</html>
+</body> <!-- Fin del contenido visible -->
+</html> <!-- Fin del documento HTML -->

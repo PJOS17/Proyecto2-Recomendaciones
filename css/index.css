@@ -1,77 +1,109 @@
+/* =============================================================================
+   index.css - Hoja de estilos de la página de bienvenida (index.html)
+   =============================================================================
+   PROPÓSITO: Define la apariencia visual de la pantalla de inicio de VIBES,
+   incluyendo el fondo oscuro, la tipografía, el botón principal verde neón,
+   el contenedor de partículas y los enlaces de navegación.
+   ESTÉTICA: Cyberpunk/futurista con fondo negro, acentos verde neón y
+   efecto de resplandor difuso (glow).
+   ============================================================================= */
+
+/* ---- ESTILOS DEL CUERPO (body) ---- */
+/* Contenedor principal de toda la página */
 body{
-    background-color: black;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    background: linear-gradient(to bottom, #1f1f1f 0%, black 12%);
-    overflow: hidden;
+    background-color: black;           /* Color de fondo base: negro puro */
+    color: white;                      /* Color de texto por defecto: blanco */
+    font-family: 'Inter', sans-serif;  /* Fuente tipográfica: Inter (Google Fonts), con fallback a sans-serif */
+    display: flex;                     /* Activa Flexbox: permite centrar el contenido vertical y horizontalmente */
+    justify-content: center;           /* Centra los elementos hijos horizontalmente dentro del body */
+    align-items: center;               /* Centra los elementos hijos verticalmente dentro del body */
+    height: 100vh;                     /* Altura del body: 100% de la altura visible del navegador (viewport height) */
+    flex-direction: column;            /* Los elementos hijos se apilan verticalmente (de arriba a abajo) */
+    background: linear-gradient(to bottom, #1f1f1f 0%, black 12%); /* Degradado sutil: gris oscuro arriba, negro al 12% */
+    overflow: hidden;                  /* Oculta cualquier contenido que se salga del viewport (evita scroll) */
 }
+
+/* ---- CONTENEDOR DE PARTÍCULAS (particles.js) ---- */
+/* Este div contiene el canvas donde se renderizan las partículas flotantes del fondo */
 #particles-js{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    position: fixed;    /* Posición fija: el contenedor no se mueve al hacer scroll */
+    width: 100%;        /* Ocupa el 100% del ancho de la ventana */
+    height: 100%;       /* Ocupa el 100% del alto de la ventana */
+    top: 0;             /* Se posiciona desde la esquina superior izquierda */
+    left: 0;            /* Se posiciona desde la esquina superior izquierda */
+    z-index: -1;        /* z-index negativo: las partículas quedan DETRÁS de todo el contenido visible */
 }
 
+/* ---- TEXTO DE BIENVENIDA ---- */
+/* Contenedor del título principal y la descripción */
 .initial-text{
-    text-align: center;
-    color: whitesmoke;
-    max-width: 500px;
-    position: relative;
+    text-align: center;     /* Centra el texto horizontalmente */
+    color: whitesmoke;      /* Color del texto: blanco humo (ligeramente más suave que blanco puro) */
+    max-width: 500px;       /* Ancho máximo de 500px para que el texto no se extienda demasiado en pantallas grandes */
+    position: relative;     /* Posición relativa: permite posicionar el pseudo-elemento ::before respecto a este contenedor */
 }
+
+/* ---- EFECTO DE RESPLANDOR (GLOW) DETRÁS DEL TÍTULO ---- */
+/* Pseudo-elemento que crea un brillo verde difuso detrás del texto de bienvenida */
 .initial-text::before{
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: rgba(55, 255, 20, 0.258);
-    filter: blur(150px);
-    top: -120px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
+    content: "";                              /* Contenido vacío (necesario para que el pseudo-elemento se renderice) */
+    position: absolute;                       /* Posición absoluta respecto al contenedor .initial-text */
+    width: 300px;                             /* Ancho del área de resplandor: 300px */
+    height: 300px;                            /* Alto del área de resplandor: 300px (cuadrado) */
+    background: rgba(55, 255, 20, 0.258);     /* Color verde neón semi-transparente (25.8% de opacidad) */
+    filter: blur(150px);                      /* Desenfoque gaussiano de 150px: convierte el cuadrado en un resplandor suave */
+    top: -120px;                              /* Se posiciona 120px por encima del contenedor, creando el efecto de "aura" */
+    left: 50%;                                /* Se coloca al 50% desde la izquierda */
+    transform: translateX(-50%);              /* Desplaza -50% de su propio ancho para centrarlo perfectamente */
+    z-index: -1;                              /* Detrás del texto pero delante de las partículas */
 }
+
+/* ---- TÍTULO PRINCIPAL (h1) ---- */
+/* Estilo del texto "INMERSIÓN INTELIGENTE" */
 h1{
-    font-size: 60px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 0.9;
+    font-size: 60px;        /* Tamaño de fuente grande: 60px para máximo impacto visual */
+    letter-spacing: 3px;    /* Espaciado entre letras: 3px para un look futurista y elegante */
+    font-weight: 700;       /* Peso de fuente: bold (negrita) para máxima legibilidad */
+    margin-bottom: 15px;    /* Margen inferior de 15px para separar del párrafo descriptivo */
+    line-height: 0.9;       /* Altura de línea: 0.9 (menor que 1) para que las líneas del título estén más juntas */
 }
+
+/* ---- PÁRRAFO DESCRIPTIVO (p) ---- */
+/* Estilo del texto de descripción bajo el título */
 p{
-    font-size: 14px;
-    text-align: center;
-    color: #B0B0B0;
-    line-height: 1.6;
+    font-size: 14px;        /* Tamaño de fuente pequeño: 14px para texto secundario */
+    text-align: center;     /* Texto centrado horizontalmente */
+    color: #B0B0B0;         /* Color gris claro: crea contraste con el título blanco, indica texto secundario */
+    line-height: 1.6;       /* Altura de línea: 1.6 para buena legibilidad en texto multilinea */
 }
 
+/* ---- BOTÓN PRINCIPAL "CREAR CUENTA" ---- */
+/* Botón verde neón que lleva a la página de registro */
 button{
-    background-color: #39FF14;
-    color: black;
-    border: none;
-    padding: 18px 50px;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: 700;
-    letter-spacing: 1px;
+    background-color: #39FF14;  /* Fondo verde neón brillante: color principal de acción de VIBES */
+    color: black;               /* Texto negro sobre fondo verde para máximo contraste */
+    border: none;               /* Sin borde: diseño limpio y moderno */
+    padding: 18px 50px;         /* Relleno interno: 18px arriba/abajo, 50px izquierda/derecha (botón ancho) */
+    margin-top: 35px;           /* Margen superior: separa el botón del texto de bienvenida */
+    margin-bottom: 35px;        /* Margen inferior: separa el botón del enlace de inicio de sesión */
+    border-radius: 40px;        /* Esquinas redondeadas: 40px crea una forma de "píldora" */
+    cursor: pointer;            /* Cursor tipo "mano" al pasar por encima: indica que es clicable */
+    transition: 0.3s;           /* Transición suave de 0.3 segundos para todas las propiedades (hover, etc.) */
+    font-weight: 700;           /* Texto en negrita para mejor legibilidad */
+    letter-spacing: 1px;        /* Espaciado entre letras para estilo futurista */
 }
 
+/* ---- EFECTO HOVER DEL BOTÓN ---- */
+/* Cambio visual cuando el usuario pasa el cursor sobre el botón */
 button:hover{
-    background-color: #5dff3f;
+    background-color: #5dff3f;  /* Verde más claro al pasar el mouse: efecto de iluminación interactivo */
 }
 
+/* ---- ENLACES DE TEXTO ---- */
+/* Estilo base para todos los enlaces <a> de la página */
 a{
-    color: #B0B0B0;
-    text-decoration: none;
-    font-size: 10px;
-    font-family: 'Inter', sans-serif;
+    color: #B0B0B0;                /* Color gris claro: no compite con el botón principal verde */
+    text-decoration: none;         /* Sin subrayado: diseño limpio */
+    font-size: 10px;               /* Tamaño pequeño: 10px, es un enlace secundario */
+    font-family: 'Inter', sans-serif; /* Misma fuente Inter que el resto de la página */
 }

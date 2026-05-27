@@ -1,353 +1,312 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html lang="en"> <!-- Elemento raíz del documento HTML -->
 
-<head>
+<head> <!-- Sección de metadatos del documento -->
 
+    <!-- Codificación UTF-8 para soportar acentos y caracteres especiales -->
     <meta charset="UTF-8">
+    <!-- Compatibilidad con Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Viewport responsivo para adaptarse al dispositivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Título de la pestaña del navegador -->
     <title>Buscar</title>
 
+    <!-- Hoja de estilos CSS específica de la página de búsqueda -->
     <link rel="stylesheet" href="css/search.css">
 
+    <!-- Preconexión a Google Fonts para carga más rápida -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Carga la fuente "Inter" con múltiples pesos -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
         rel="stylesheet"
     >
 
+    <!-- Carga la librería de iconos Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     >
 
-</head>
+</head> <!-- Fin de metadatos -->
 
-<body>
+<body> <!-- Contenido visible de la página de búsqueda -->
 
+    <!-- Contenedor para la animación de partículas del fondo -->
     <div id="particles-js"></div>
 
-    <!-- SIDEBAR -->
+    <!-- ==================== BARRA LATERAL (SIDEBAR) ==================== -->
+    <!-- Menú de navegación fijo en el lado izquierdo -->
 
     <div class="side-bar">
 
         <div>
 
+            <!-- Logo de la aplicación -->
             <h1 class="logo">VIBES</h1>
+
+            <!-- Menú de navegación principal -->
             <div class="menu">
 
+                <!-- Enlace a Inicio -->
                 <a href="home.html">
-                    <i class="fa-solid fa-house"></i>
+                    <i class="fa-solid fa-house"></i> <!-- Icono de casa -->
                     Inicio
                 </a>
 
+                <!-- Enlace a Buscar (activo en esta página, indicado por class="active") -->
                 <a class="active" href="search.html">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i> <!-- Icono de lupa -->
                     Buscar
                 </a>
 
+                <!-- Enlace a Biblioteca -->
                 <a href="library.html">
-                    <i class="fa-solid fa-book"></i>
+                    <i class="fa-solid fa-book"></i> <!-- Icono de libro -->
                     Biblioteca
                 </a>
 
-            </div>
+            </div> <!-- Fin del menú -->
 
         </div>
 
-        <div>
+        <div> <!-- Sección inferior del sidebar -->
 
+            <!-- Botón de géneros favoritos -->
             <button class="genres-btn" style="cursor: pointer;">
                 Tus Géneros Top
             </button>
 
+            <!-- Menú inferior: Ajustes y Soporte -->
             <div class="bottom-menu">
 
+                <!-- Botón de configuración -->
                 <a href="#" id="settings-btn">
-                    <i class="fa-solid fa-gear"></i>
+                    <i class="fa-solid fa-gear"></i> <!-- Icono de engranaje -->
                     Ajustes
                 </a>
 
+                <!-- Enlace de soporte -->
                 <a href="#">
-                    <i class="fa-solid fa-circle-question"></i>
+                    <i class="fa-solid fa-circle-question"></i> <!-- Icono de ayuda -->
                     Soporte
                 </a>
 
-            </div>
+            </div> <!-- Fin del menú inferior -->
 
-        </div>
+        </div> <!-- Fin de la sección inferior -->
 
-    </div>
+    </div> <!-- Fin del sidebar -->
 
-    <!-- MAIN CONTENT -->
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+    <!-- Área central donde se muestra la búsqueda y sus resultados -->
 
     <div class="main-content">
 
-        <!-- TOP BAR -->
-
+        <!-- ---- BARRA SUPERIOR ---- -->
         <div class="top-bar">
 
+            <!-- Enlaces de navegación rápida -->
             <div class="top-links">
-
-                <a href="#">Descubrir</a>
-                <a href="#">Novedades</a>
-                <a href="#">En Vivo</a>
-
+                <a href="#">Descubrir</a>    <!-- Explorar todo el catálogo -->
+                <a href="#">Novedades</a>    <!-- Nuevas canciones -->
+                <a href="#">En Vivo</a>      <!-- Contenido en directo -->
             </div>
 
+            <!-- Sección derecha: Premium, notificaciones, perfil -->
             <div class="top-right">
-
-                <button class="upgrade-btn">
-                    Premium
-                </button>
-
-                <i class="fa-regular fa-bell"></i>
-
-                <i class="fa-regular fa-circle-user"></i>
-
+                <button class="upgrade-btn">Premium</button>
+                <i class="fa-regular fa-bell"></i>         <!-- Notificaciones -->
+                <i class="fa-regular fa-circle-user"></i>  <!-- Perfil -->
             </div>
 
-        </div>
+        </div> <!-- Fin barra superior -->
 
-        <!-- SEARCH INPUT -->
-
+        <!-- ==================== BARRA DE BÚSQUEDA ==================== -->
+        <!-- Input principal donde el usuario escribe su búsqueda -->
         <div class="search-box">
-
-            <i class="fa-solid fa-magnifying-glass"></i>
-
+            <i class="fa-solid fa-magnifying-glass"></i> <!-- Icono de lupa decorativo -->
+            <!-- Campo de texto con id para que search.js lo vincule -->
             <input
                 type="text"
                 id="search-input"
                 placeholder="Buscar canciones, artistas, géneros o moods..."
             >
-
         </div>
 
-        <!-- RELATED SEARCHES -->
+        <!-- ==================== BÚSQUEDAS RELACIONADAS ==================== -->
+        <!-- Contenedor que muestra etiquetas de búsquedas sugeridas al escribir -->
+        <!-- Inicialmente oculto (display: none), search.js lo muestra cuando hay resultados -->
         <div id="related-searches-container" style="display: none; margin-top: 15px; margin-bottom: 15px; font-family: inherit; display: flex; align-items: center;">
+            <!-- Etiqueta "Búsquedas relacionadas:" -->
             <span style="color: #666; font-size: 11px; font-weight: bold; text-transform: uppercase; margin-right: 12px; letter-spacing: 0.5px;">Búsquedas relacionadas:</span>
+            <!-- Contenedor donde se inyectan los tags de búsquedas relacionadas -->
             <div id="related-searches" style="display: flex; gap: 8px; flex-wrap: wrap;">
-                <!-- Se inyecta dinámicamente -->
+                <!-- Se inyecta dinámicamente desde search.js -->
             </div>
         </div>
 
-        <!-- TAGS -->
-
+        <!-- ==================== ETIQUETAS DE FILTRO RÁPIDO ==================== -->
+        <!-- Fila de botones de filtro para buscar por categoría -->
         <div class="tag-row">
-
-            <button>Rock</button>
-
-            <button>Pop</button>
-
-            <button>Reggaetón</button>
-
-            <button>Estudio</button>
-
+            <button>Rock</button>       <!-- Filtro rápido por Rock -->
+            <button>Pop</button>        <!-- Filtro rápido por Pop -->
+            <button>Reggaetón</button>  <!-- Filtro rápido por Reggaetón -->
+            <button>Estudio</button>    <!-- Filtro rápido por mood "Estudio" -->
         </div>
 
-        <!-- SEARCH RESULTS -->
+        <!-- ==================== RESULTADOS DE BÚSQUEDA ==================== -->
+        <!-- Sección que se muestra dinámicamente cuando hay resultados -->
+        <!-- Inicialmente oculta -->
         <div class="section-title" id="results-title" style="display: none; margin-top: 30px;">
             <h2>Resultados de Búsqueda</h2>
         </div>
+        <!-- Cuadrícula donde search.js inyecta las tarjetas de resultados -->
         <div class="card-grid" id="search-results-grid" style="display: none; margin-bottom: 40px;">
-            <!-- Resultados se cargan dinámicamente -->
+            <!-- Resultados se cargan dinámicamente desde search.js -->
         </div>
 
-        <!-- SEARCH LAYOUT -->
-
+        <!-- ==================== LAYOUT DE BÚSQUEDA VISUAL ==================== -->
+        <!-- Layout con dos paneles: grafo visual a la izquierda, estadísticas a la derecha -->
         <div class="search-layout">
 
-            <!-- LEFT -->
-
+            <!-- ---- PANEL IZQUIERDO: GRAFO VISUAL ---- -->
+            <!-- Muestra un mapa de topología visual (decorativo) -->
             <div class="graph-panel">
-
                 <div class="fake-graph">
-
+                    <!-- Nodo central decorativo del grafo -->
                     <div class="center-node"></div>
-
                 </div>
-
                 <h3>Mapa de Topología Interactiva</h3>
-
                 <p>
                     Descubre recomendaciones contextuales basadas en
                     la similitud acústica y estructural de datos.
                 </p>
-
             </div>
 
-            <!-- RIGHT -->
-
+            <!-- ---- PANEL DERECHO: ESTADÍSTICAS DEL NODO ---- -->
+            <!-- Muestra información del nodo seleccionado -->
             <div class="node-panel">
-
                 <h4>Nodo Seleccionado</h4>
-
-                <h1>NOD3_ROCK</h1>
-
+                <h1>NOD3_ROCK</h1> <!-- Nombre del nodo (decorativo) -->
                 <p>Índice de Compatibilidad: 98.4%</p>
 
+                <!-- Estadísticas decorativas del nodo -->
                 <div class="stat">
-
                     <span>Varianza de BPM</span>
-
-                    <div class="line"></div>
-
+                    <div class="line"></div> <!-- Barra visual -->
                 </div>
 
                 <div class="stat">
-
                     <span>Complejidad de Timbre</span>
-
                     <div class="line"></div>
-
                 </div>
 
                 <div class="stat">
-
                     <span>Densidad Neuronal</span>
-
                     <div class="line"></div>
-
                 </div>
 
+                <!-- Botón para reproducir las canciones del nodo -->
                 <button class="play-cluster">
                     Reproducir Nodo
                 </button>
 
-            </div>
+            </div> <!-- Fin del panel derecho -->
 
-        </div>
+        </div> <!-- Fin del layout de búsqueda -->
 
-        <!-- EXTRA SECTION -->
-
+        <!-- ==================== NODOS SUGERIDOS ==================== -->
+        <!-- Sección con tarjetas de canciones recomendadas estáticas -->
         <div class="section-title">
-
             <h2>Nodos Sugeridos</h2>
-
         </div>
 
+        <!-- Cuadrícula de tarjetas de canciones sugeridas -->
         <div class="recommended-grid">
 
+            <!-- Tarjeta: Sweet Child O' Mine -->
             <div class="recommend-card">
-
                 <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=300&auto=format&fit=crop">
-
                 <h4>Sweet Child O' Mine</h4>
-
                 <p>98% de compatibilidad</p>
-
             </div>
 
+            <!-- Tarjeta: In The End -->
             <div class="recommend-card">
-
                 <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=300&auto=format&fit=crop">
-
                 <h4>In The End</h4>
-
                 <p>96% de compatibilidad</p>
-
             </div>
 
+            <!-- Tarjeta: Monster -->
             <div class="recommend-card">
-
                 <img src="https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?q=80&w=300&auto=format&fit=crop">
-
                 <h4>Monster</h4>
-
                 <p>94% de compatibilidad</p>
-
             </div>
 
+            <!-- Tarjeta: Get Lucky -->
             <div class="recommend-card">
-
                 <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=300&auto=format&fit=crop">
-
                 <h4>Get Lucky</h4>
-
                 <p>92% de compatibilidad</p>
-
             </div>
 
-        </div>
+        </div> <!-- Fin de la cuadrícula de sugeridos -->
 
-    </div>
+    </div> <!-- Fin del contenido principal -->
 
-    <!-- PLAYER -->
-
+    <!-- ==================== REPRODUCTOR DE MÚSICA ==================== -->
+    <!-- Barra fija inferior con controles de reproducción -->
     <div class="music-player">
 
-        <!-- LEFT -->
-
+        <!-- Lado izquierdo: info de la canción actual -->
         <a href="player.html" class="song-info">
-
             <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=100&auto=format&fit=crop">
-
             <div>
-
                 <h4>Ninguna sonando</h4>
-
                 <p>VIBES</p>
-
             </div>
-
-            <i class="fa-regular fa-heart"></i>
-
+            <i class="fa-regular fa-heart"></i> <!-- Favorito -->
         </a>
 
-        <!-- CENTER -->
-
+        <!-- Centro: controles de reproducción -->
         <div class="player-controls">
-
-            <i class="fa-solid fa-shuffle"></i>
-
-            <i class="fa-solid fa-backward"></i>
-
+            <i class="fa-solid fa-shuffle"></i>    <!-- Aleatorio -->
+            <i class="fa-solid fa-backward"></i>   <!-- Anterior -->
             <button class="play-btn">
-
-                <i class="fa-solid fa-play"></i>
-
+                <i class="fa-solid fa-play"></i>    <!-- Play/Pause -->
             </button>
-
-            <i class="fa-solid fa-forward"></i>
-
-            <i class="fa-solid fa-repeat"></i>
-
+            <i class="fa-solid fa-forward"></i>    <!-- Siguiente -->
+            <i class="fa-solid fa-repeat"></i>     <!-- Repetir -->
         </div>
 
-        <!-- RIGHT -->
-
+        <!-- Derecha: tiempo y volumen -->
         <div class="song-time">
-
             <i class="fa-solid fa-computer"></i>
-
             <span>0:00</span>
-
             <div class="progress-bar">
-
                 <div class="progress"></div>
-
             </div>
-
             <span>0:00</span>
-
             <i class="fa-solid fa-volume-high"></i>
-
             <div class="volume-bar">
-
                 <div class="volume-progress"></div>
-
             </div>
-
         </div>
 
-    </div>
+    </div> <!-- Fin del reproductor -->
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/catalog.js"></script>
-    <script src="js/player_controller.js"></script>
-    <script src="js/search.js"></script>
-</body>
-</html>
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- Partículas del fondo -->
+    <script src="js/catalog.js"></script>             <!-- Catálogo de canciones/artistas -->
+    <script src="js/player_controller.js"></script>   <!-- Controlador global del reproductor -->
+    <script src="js/search.js"></script>              <!-- Lógica de búsqueda y filtrado -->
+
+</body> <!-- Fin del contenido visible -->
+</html> <!-- Fin del documento HTML -->
