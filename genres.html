@@ -39,7 +39,7 @@
             <h1>VIBES</h1>
 
             <div class="status-box">
-                INITIATING
+                INICIANDO PERFIL
             </div>
 
         </div>
@@ -48,15 +48,15 @@
 
             <div class="progress-header">
 
-                <span>NEURAL MAPPING</span>
+                <span>MAPEO NEURONAL</span>
 
-                <span class="progress-percent">40%</span>
+                <span class="progress-percent">0%</span>
 
             </div>
 
             <div class="progress-bar">
 
-                <div class="progress"></div>
+                <div class="progress" style="width: 0%;"></div>
 
             </div>
 
@@ -72,16 +72,16 @@
 
         <div class="intro-section">
 
-            <h2>Curate Your Algorithm</h2>
+            <h2>Cura tu Algoritmo Musical</h2>
 
             <p>
-                Select the data points that define your auditory identity.
-                Minimum 3 selections per module required to compile your profile.
+                Selecciona los puntos de datos que definen tu identidad auditiva.
+                Se requiere un mínimo de 3 selecciones por módulo para compilar tu perfil.
             </p>
 
         </div>
 
-        <!-- GENRES -->
+        <!-- GÉNEROS -->
 
         <div class="section">
 
@@ -89,44 +89,25 @@
 
                 <h3>
                     <i class="fa-solid fa-diamond"></i>
-                    SONIC ARCHITECTURES
+                    ARQUITECTURAS SONORAS (GÉNEROS)
                 </h3>
 
-                <span>0 / 3 MIN</span>
+                <span>0 / 3 MÍN</span>
 
             </div>
 
             <div class="tag-grid">
+                <!-- Inyectado dinámicamente -->
+            </div>
 
-                <button>Electronic</button>
-
-                <button class="selected-tag">Synthwave</button>
-
-                <button>Phonk</button>
-
-                <button>Dark Ambient</button>
-
-                <button class="selected-tag">Industrial</button>
-
-                <button>Techno</button>
-
-                <button>Metalcore</button>
-
-                <button>Lo-Fi</button>
-
-                <button>Post-Punk</button>
-
-                <button>Shoegaze</button>
-
-                <button>IDM</button>
-
-                <button>Hyperpop</button>
-
+            <div class="custom-add-container">
+                <input type="text" id="genre-search" placeholder="Buscar o agregar género personalizado...">
+                <button id="genre-add-btn" class="custom-add-btn"><i class="fa-solid fa-plus"></i></button>
             </div>
 
         </div>
 
-        <!-- ARTISTS -->
+        <!-- ARTISTAS -->
 
         <div class="section">
 
@@ -134,66 +115,25 @@
 
                 <h3>
                     <i class="fa-solid fa-record-vinyl"></i>
-                    PRIMARY NODES (ARTISTS)
+                    NODOS PRIMARIOS (ARTISTAS / GRUPOS)
                 </h3>
 
-                <span>0 / 3 MIN</span>
+                <span>0 / 3 MÍN</span>
 
             </div>
 
             <div class="artist-grid">
+                <!-- Inyectado dinámicamente -->
+            </div>
 
-                <div class="artist-card selected-card">
-
-                    <img src="https://picsum.photos/300?81">
-
-                    <div class="check-icon">
-
-                        <i class="fa-solid fa-check"></i>
-
-                    </div>
-
-                    <p>Kavinsky</p>
-
-                </div>
-
-                <div class="artist-card">
-
-                    <img src="https://picsum.photos/300?82">
-
-                    <p>Daft Punk</p>
-
-                </div>
-
-                <div class="artist-card">
-
-                    <img src="https://picsum.photos/300?83">
-
-                    <p>Gesaffelstein</p>
-
-                </div>
-
-                <div class="artist-card">
-
-                    <img src="https://picsum.photos/300?84">
-
-                    <p>The Midnight</p>
-
-                </div>
-
-                <div class="artist-card add-card">
-
-                    <i class="fa-solid fa-plus"></i>
-
-                    <p>Search Node</p>
-
-                </div>
-
+            <div class="custom-add-container">
+                <input type="text" id="artist-search" placeholder="Buscar o agregar artista o grupo...">
+                <button id="artist-add-btn" class="custom-add-btn"><i class="fa-solid fa-plus"></i></button>
             </div>
 
         </div>
 
-        <!-- STATES -->
+        <!-- MOODS -->
 
         <div class="section">
 
@@ -201,61 +141,20 @@
 
                 <h3>
                     <i class="fa-solid fa-brain"></i>
-                    COGNITIVE STATES
+                    ESTADOS COGNITIVOS (MOODS)
                 </h3>
 
-                <span>0 / 3 MIN</span>
+                <span>0 / 3 MÍN</span>
 
             </div>
 
             <div class="mood-grid">
+                <!-- Inyectado dinámicamente -->
+            </div>
 
-                <div class="mood-card">
-
-                    <img src="https://picsum.photos/500?91">
-
-                    <p>Deep Work</p>
-
-                </div>
-
-                <div class="mood-card selected-card">
-
-                    <img src="https://picsum.photos/500?92">
-
-                    <div class="check-icon">
-
-                        <i class="fa-solid fa-check"></i>
-
-                    </div>
-
-                    <p>Kinetic</p>
-
-                </div>
-
-                <div class="mood-card">
-
-                    <img src="https://picsum.photos/500?93">
-
-                    <p>Null State</p>
-
-                </div>
-
-                <div class="mood-card">
-
-                    <img src="https://picsum.photos/500?94">
-
-                    <p>Overdrive</p>
-
-                </div>
-
-                <div class="mood-card">
-
-                    <img src="https://picsum.photos/500?95">
-
-                    <p>Synthesis</p>
-
-                </div>
-
+            <div class="custom-add-container">
+                <input type="text" id="mood-search" placeholder="Buscar o agregar estado/mood conocido...">
+                <button id="mood-add-btn" class="custom-add-btn"><i class="fa-solid fa-plus"></i></button>
             </div>
 
         </div>
@@ -269,10 +168,10 @@
         <div class="status-section">
 
             <span class="status-title">
-                STATUS
+                ESTADO
             </span>
 
-            <p>Awaiting Data Input</p>
+            <p>Esperando Entrada de Datos</p>
 
         </div>
 
@@ -282,7 +181,7 @@
 
                 <i class="fa-solid fa-circle-nodes"></i>
 
-                COMPILE ALGORITHM
+                COMPILAR ALGORITMO
 
             </button>
 
@@ -291,7 +190,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
+    <script src="js/catalog.js"></script>
     <script src="js/genres.js"></script>
 
 </body>

@@ -457,3 +457,37 @@ body{
 .volume-section i:hover{
     color:#39FF14;
 }
+
+/* RESPONSIVE LAYOUT FOR VERTICAL VIEWS */
+
+@media (max-height: 950px) {
+    .album-cover {
+        height: 380px;
+    }
+}
+
+@media (max-height: 800px) {
+    .album-cover {
+        height: 280px;
+    }
+    .album-info h1 {
+        font-size: 38px;
+    }
+    .play-btn {
+        width: 65px;
+        height: 65px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .player-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    .main-content {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: visible;
+    }
+}

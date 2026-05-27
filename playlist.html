@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Playlist</title>
+    <title>Lista de Reproducción</title>
 
     <link rel="stylesheet" href="css/playlist.css">
 
@@ -42,22 +42,17 @@
 
                 <a href="home.html">
                     <i class="fa-solid fa-house"></i>
-                    Home
+                    Inicio
                 </a>
 
                 <a href="search.html">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    Search
+                    Buscar
                 </a>
 
                 <a href="library.html">
                     <i class="fa-solid fa-book"></i>
-                    Library
-                </a>
-
-                <a href="#">
-                    <i class="fa-solid fa-radio"></i>
-                    Radio
+                    Biblioteca
                 </a>
 
             </div>
@@ -67,19 +62,19 @@
         <div class="bottom-section">
 
             <button class="genres-btn">
-                Your Top Genres
+                Tus Géneros Top
             </button>
 
             <div class="bottom-menu">
 
                 <a href="#">
                     <i class="fa-solid fa-gear"></i>
-                    Settings
+                    Ajustes
                 </a>
 
                 <a href="#">
                     <i class="fa-solid fa-circle-question"></i>
-                    Support
+                    Soporte
                 </a>
 
             </div>
@@ -98,18 +93,18 @@
 
             <div class="top-links">
 
-                <a href="#">Discover</a>
+                <a href="#">Descubrir</a>
 
-                <a href="#">New Releases</a>
+                <a href="#">Novedades</a>
 
-                <a href="#">Live</a>
+                <a href="#">En Vivo</a>
 
             </div>
 
             <div class="top-right">
 
                 <button class="upgrade-btn">
-                    Upgrade
+                    Premium
                 </button>
 
                 <i class="fa-regular fa-bell"></i>
@@ -126,55 +121,39 @@
 
             <img
                 class="playlist-cover"
-                src="https://picsum.photos/500?21"
+                id="playlist-cover"
+                src="https://picsum.photos/500?88"
             >
 
             <div class="playlist-info">
 
                 <p class="playlist-tag">
-                    PLAYLIST
+                    LISTA DE REPRODUCCIÓN
                 </p>
 
-                <h1>Deep Focus / Vol. 4</h1>
+                <h1 id="playlist-title">Título de la Lista</h1>
 
-                <p class="playlist-description">
-                    Curated for deep work sessions and neural immersion.
-                    Algorithmically refined using your current listening patterns.
+                <p class="playlist-description" id="playlist-desc">
+                    Camino compilado según tus preferencias de audio neuronal.
                 </p>
 
-                <div class="playlist-meta">
+                <div class="playlist-meta" id="playlist-meta">
 
                     <span>VIBES</span>
 
                     <span>•</span>
 
-                    <span>48 songs</span>
-
-                    <span>•</span>
-
-                    <span>4h 22min</span>
+                    <span id="playlist-song-count">0 canciones</span>
 
                 </div>
 
                 <div class="playlist-actions">
 
-                    <button class="play-all-btn">
+                    <button class="play-all-btn" id="playlist-play-btn" style="cursor: pointer;">
 
                         <i class="fa-solid fa-play"></i>
 
-                        Play
-
-                    </button>
-
-                    <button class="secondary-btn">
-
-                        <i class="fa-regular fa-heart"></i>
-
-                    </button>
-
-                    <button class="secondary-btn">
-
-                        <i class="fa-solid fa-ellipsis"></i>
+                        Reproducir
 
                     </button>
 
@@ -194,162 +173,17 @@
 
                 <span>#</span>
 
-                <span>TITLE</span>
+                <span>TÍTULO</span>
 
-                <span>ALBUM</span>
+                <span>GÉNERO</span>
 
-                <span>DURATION</span>
-
-            </div>
-
-            <!-- SONGS -->
-
-            <a href="player.html" class="song-row">
-
-                <span>01</span>
-
-                <div class="song-title">
-
-                    <img src="https://picsum.photos/100?22">
-
-                    <div>
-
-                        <h4>Neural Link / Alpha</h4>
-
-                        <p>Jon Hopkins</p>
-
-                    </div>
-
-                </div>
-
-                <p>Signal Drift</p>
-
-                <span>6:14</span>
-
-            </a>
-
-            <a href="player.html" class="song-row">
-
-                <span>02</span>
-
-                <div class="song-title">
-
-                    <img src="https://picsum.photos/100?23">
-
-                    <div>
-
-                        <h4>Ghost in the Stack</h4>
-
-                        <p>Data_Streamer</p>
-
-                    </div>
-
-                </div>
-
-                <p>Void State</p>
-
-                <span>4:22</span>
-
-            </a>
-
-            <a href="player.html" class="song-row">
-
-                <span>03</span>
-
-                <div class="song-title">
-
-                    <img src="https://picsum.photos/100?24">
-
-                    <div>
-
-                        <h4>Cybernetic Bloom</h4>
-
-                        <p>Neural Protocol</p>
-
-                    </div>
-
-                </div>
-
-                <p>Immersion</p>
-
-                <span>5:47</span>
-
-            </a>
-
-            <a href="player.html" class="song-row">
-
-                <span>04</span>
-
-                <div class="song-title">
-
-                    <img src="https://picsum.photos/100?25">
-
-                    <div>
-
-                        <h4>Pulse Architecture</h4>
-
-                        <p>SYNTH_DATA</p>
-
-                    </div>
-
-                </div>
-
-                <p>Neon Collapse</p>
-
-                <span>3:56</span>
-
-            </a>
-
-        </div>
-
-        <!-- RECOMMENDED -->
-
-        <div class="section-title">
-
-            <h2>Recommended Nodes</h2>
-
-        </div>
-
-        <div class="recommended-grid">
-
-            <div class="recommend-card">
-
-                <img src="https://picsum.photos/300?26">
-
-                <h4>Signal Fade</h4>
-
-                <p>94% compatibility</p>
+                <span>ESTADO (MOOD)</span>
 
             </div>
 
-            <div class="recommend-card">
-
-                <img src="https://picsum.photos/300?27">
-
-                <h4>Quantum State</h4>
-
-                <p>91% compatibility</p>
-
-            </div>
-
-            <div class="recommend-card">
-
-                <img src="https://picsum.photos/300?28">
-
-                <h4>Data Bloom</h4>
-
-                <p>96% compatibility</p>
-
-            </div>
-
-            <div class="recommend-card">
-
-                <img src="https://picsum.photos/300?29">
-
-                <h4>Void Echo</h4>
-
-                <p>89% compatibility</p>
-
+            <!-- SONGS CONTAINER -->
+            <div id="songs-container">
+                <!-- Se inyecta dinámicamente -->
             </div>
 
         </div>
@@ -364,13 +198,13 @@
 
         <a href="player.html" class="song-info">
 
-            <img src="https://picsum.photos/100?30">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=100&auto=format&fit=crop">
 
             <div>
 
-                <h4>Neon Protocol</h4>
+                <h4>Ninguna sonando</h4>
 
-                <p>Data_Streamer</p>
+                <p>VIBES</p>
 
             </div>
 
@@ -427,9 +261,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
+    <script src="js/catalog.js"></script>
+    <script src="js/player_controller.js"></script>
     <script src="js/playlist.js"></script>
-
 </body>
-
 </html>

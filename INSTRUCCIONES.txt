@@ -1,0 +1,116 @@
+========================================================================
+             VIBES - GUÍA DE EJECUCIÓN Y MANUAL DE USUARIO
+========================================================================
+
+¡Bienvenido a VIBES! Un reproductor de música premium con una estética
+ciberpunk de alta fidelidad, animaciones reactivas y algoritmos de
+recomendación híbridos inteligentes.
+
+Este documento explica cómo ejecutar y disfrutar del programa en cualquier
+computadora de forma rápida y sencilla.
+
+------------------------------------------------------------------------
+1. MODOS DE EJECUCIÓN (Elige el que prefieras)
+------------------------------------------------------------------------
+
+VIBES está diseñado para ser 100% flexible. Puedes correrlo en dos modos:
+
+MODO A: 100% OFFLINE (Almacenamiento Local - ¡Recomendado para Git y pruebas rápidas!)
+   Este modo no requiere instalar Python, configurar servidores, ni levantar
+   bases de datos. Es perfecto para probar el programa al instante.
+   
+   Instrucciones:
+   1. Ve a la carpeta raíz del proyecto.
+   2. Haz doble clic sobre el archivo "index.html".
+   3. ¡Listo! El programa se abrirá directamente en tu navegador web.
+   * Todos tus usuarios registrados, playlists, portadas personalizadas
+     y preferencias se guardarán de forma local y persistente en el
+     almacenamiento (localStorage) de tu propio navegador.
+
+MODO B: SERVIDOR HÍBRIDO (Neo4j / API Flask)
+   Este modo corre un servidor backend robusto desarrollado en Flask que
+   se conecta a una base de datos de grafos Neo4j (en la nube o local) y
+   maneja sincronización.
+   
+   Instrucciones:
+   1. Asegúrate de tener Python instalado en tu computadora.
+   2. Instala las dependencias necesarias abriendo una terminal en la
+      carpeta del proyecto y ejecutando:
+         pip install flask neo4j
+   3. Inicia el servidor backend ejecutando:
+         python server.py
+   4. Abre tu navegador web y entra a la siguiente dirección:
+         http://localhost:5000
+   * El servidor intentará conectarse automáticamente a Neo4j en la nube (AuraDB).
+     Si no hay internet o las credenciales no son accesibles, el servidor
+     activará el "Modo Fallback" de forma automática, leyendo y guardando todos
+     los datos de forma ultra segura en el archivo local "db_fallback.json".
+
+------------------------------------------------------------------------
+2. GUÍA DE USO PASO A PASO (De principio a fin)
+------------------------------------------------------------------------
+
+Paso 1: Registro e Inicio de Sesión
+   - Al abrir el programa por primera vez, el sistema no tendrá sesiones activas.
+   - Haz clic en "Crear Cuenta" para registrar un nuevo usuario y contraseña.
+   - Luego, inicia sesión con tus credenciales. La sesión se mantendrá guardada
+     de forma segura entre reinicios de la página.
+
+Paso 2: Selección de Preferencias (Algoritmo Inicial)
+   - Serás redirigido a la pantalla de Géneros / Gustos.
+   - Selecciona al menos 3 géneros de música famosos, 3 artistas o grupos conocidos
+     y 3 estados de ánimo (Moods).
+   - ¡NUEVO! Puedes usar la barra de búsqueda en esa pantalla para encontrar y
+     agregar nuevos géneros, artistas o moods personalizados al instante si no
+     están en la lista inicial.
+   - Haz clic en "Guardar Preferencias".
+
+Paso 3: Pantalla de Inicio (Home)
+   - El programa cargará recomendaciones personalizadas generadas a la medida
+     de tus gustos seleccionados.
+   - Verás dos secciones dinámicas premium: "Canciones Recomendadas" y
+     "Artistas Recomendados" que se ajustan al instante.
+   - Haz clic en cualquier tarjeta de música para iniciar la reproducción.
+
+Paso 4: Búsqueda Inteligente y Relacionada
+   - Ve a la sección "Buscar" en el menú lateral.
+   - Escribe el nombre de una canción, artista, género o mood en la barra.
+   - ¡NUEVO! El motor de búsqueda incluye "Búsquedas Relacionadas" en tiempo real.
+     Por ejemplo: si buscas "gym", el sistema te sugerirá dinámicamente tags
+     relacionados como "Ejercicio", "Monster", "Eminem" y "Metal" para refinar
+     tu búsqueda con un solo clic.
+
+Paso 5: Biblioteca y Listas de Reproducción (Playlists)
+   - En la sección "Biblioteca" puedes crear nuevas playlists personalizadas.
+   - Puedes cambiar el nombre de la playlist, editar su foto de portada o
+     eliminarla por completo si lo deseas.
+   - Para añadir canciones a una playlist: ve a cualquier tarjeta de música
+     en Inicio o Buscar, haz clic en el botón "+" verde en la esquina superior
+     derecha de la tarjeta y selecciona la playlist deseada del menú desplegable.
+   - Puedes reproducir tus listas en orden secuencial o usar la opción
+     de reproducción aleatoria (Shuffle) premium.
+
+Paso 6: Reproductor Premium y Letras Bilingües Sincronizadas
+   - Al reproducir música, entrarás al "Player" que cuenta con una visualización
+     gráfica de espectro de ondas ciberpunk en tiempo real.
+   - ¡NUEVO! Letras Bilingües: El reproductor carga la letra en su idioma original.
+     Haz clic en el botón "Traducir al Español" en la parte superior derecha de
+     la letra para alternar de forma inmediata entre la letra original y su traducción.
+   - Las canciones instrumentales (como "Ghost in the Stack" o "Neon Protocol")
+     muestran un banner decorativo que dice "[PISTA INSTRUMENTAL]" libre de voz.
+   - Todos los botones de reproducción (pausa, avance, retroceso, barra de tiempo
+     y volumen) funcionan a la perfección de forma interactiva.
+
+Paso 7: Ajustes y Administración de Cuenta
+   - Haz clic en "Ajustes" (ícono de engranaje) en el menú lateral para abrir
+     el panel de control global.
+   - Puedes cambiar dinámicamente el modo de base de datos entre Local y Servidor.
+   - Cierre de Sesión: Haz clic en el ícono de perfil en la esquina superior derecha
+     de la barra superior para cerrar tu sesión activa de forma segura.
+   - ¡NUEVO! Eliminar Cuenta: Si lo deseas, puedes hacer clic en "Eliminar Cuenta"
+     en el panel de Ajustes para borrar irreversiblemente tu perfil, preferencias
+     y playlists del sistema, asegurando la privacidad total de tus datos.
+
+------------------------------------------------------------------------
+¡Gracias por elegir VIBES, disfruta del viaje sonoro neuronal!
+------------------------------------------------------------------------

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Player</title>
+    <title>Reproductor</title>
 
     <link rel="stylesheet" href="css/player.css">
 
@@ -42,22 +42,17 @@
 
                 <a href="home.html">
                     <i class="fa-solid fa-house"></i>
-                    Home
+                    Inicio
                 </a>
 
                 <a href="search.html">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    Search
+                    Buscar
                 </a>
 
                 <a href="library.html">
                     <i class="fa-solid fa-book"></i>
-                    Library
-                </a>
-
-                <a href="#">
-                    <i class="fa-solid fa-radio"></i>
-                    Radio
+                    Biblioteca
                 </a>
 
             </div>
@@ -67,19 +62,19 @@
         <div class="bottom-section">
 
             <button class="genres-btn">
-                Your Top Genres
+                Tus Géneros Top
             </button>
 
             <div class="bottom-menu">
 
                 <a href="#">
                     <i class="fa-solid fa-gear"></i>
-                    Settings
+                    Ajustes
                 </a>
 
                 <a href="#">
                     <i class="fa-solid fa-circle-question"></i>
-                    Support
+                    Soporte
                 </a>
 
             </div>
@@ -98,18 +93,18 @@
 
             <div class="top-links">
 
-                <a href="#">Now Playing</a>
+                <a href="#">Reproduciendo</a>
 
-                <a href="#">Lyrics</a>
+                <a href="#">Espectro</a>
 
-                <a href="#">Queue</a>
+                <a href="#">Cola</a>
 
             </div>
 
             <div class="top-right">
 
                 <button class="upgrade-btn">
-                    Upgrade
+                    Premium
                 </button>
 
                 <i class="fa-regular fa-bell"></i>
@@ -135,29 +130,29 @@
 
                 <div class="album-info">
 
-                    <h1>Neon Protocol</h1>
+                    <h1 id="player-song-title">Ninguna sonando</h1>
 
-                    <h3>Data_Streamer</h3>
+                <h3 id="player-song-artist">VIBES</h3>
 
-                    <!-- ACTIONS -->
+                <!-- ACTIONS -->
 
-                    <div class="song-actions">
+                <div class="song-actions">
 
-                        <button class="action-btn">
+                    <button class="action-btn">
 
-                            <i class="fa-regular fa-heart"></i>
+                        <i class="fa-regular fa-heart"></i>
 
-                            Save
+                        Guardar
 
-                        </button>
+                    </button>
 
-                        <button class="action-btn">
+                    <button class="action-btn">
 
-                            <i class="fa-solid fa-share"></i>
+                        <i class="fa-solid fa-share"></i>
 
-                            Share
+                        Compartir
 
-                        </button>
+                    </button>
 
                     </div>
 
@@ -215,46 +210,20 @@
 
             </div>
 
-            <!-- CENTER -->
-
             <div class="lyrics-panel">
 
-                <h2>LYRICS FEED</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+                    <h2 style="margin: 0; font-size: 18px; font-weight: bold; letter-spacing: 1px;">ESPECTRO Y LETRA NEURONAL</h2>
+                    <button id="translate-lyrics-btn" style="background: transparent; border: 1px solid #39FF14; color: #39FF14; font-family: inherit; font-size: 11px; font-weight: bold; text-transform: uppercase; padding: 6px 12px; border-radius: 6px; cursor: pointer; transition: 0.3s; box-shadow: 0 0 10px rgba(57,255,20,0.15); display: flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-language"></i> Traducir al Español
+                    </button>
+                </div>
 
-                <div class="lyrics-content">
-
-                    <p class="active-line">
-                        Running the Neon Protocol
-                    </p>
-
-                    <p>
-                        Syntax burning bright tonight
-                    </p>
-
-                    <p>
-                        Signals drifting through the void
-                    </p>
-
-                    <p>
-                        Echo chambers synchronize
-                    </p>
-
-                    <p>
-                        Fractured data comes alive
-                    </p>
-
-                    <p>
-                        Mapping every neural trace
-                    </p>
-
-                    <p>
-                        Deep immersion in the static
-                    </p>
-
-                    <p>
-                        System pulse accelerating
-                    </p>
-
+                <div class="lyrics-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background: #000; border-radius: 10px; overflow: hidden; border: 1px dashed #39FF14; padding: 20px; height: calc(100% - 65px); position: relative;">
+                    <canvas id="audio-visualizer" style="width: 100%; height: 100%; display: block; position: absolute; top: 0; left: 0; opacity: 0.45; z-index: 1;"></canvas>
+                    <div id="player-lyrics-box" style="z-index: 2; width: 100%; display: flex; flex-direction: column; gap: 12px; text-align: center; overflow-y: auto; max-height: 80%; padding: 10px; font-family: inherit;">
+                        <!-- Letras inyectadas dinámicamente -->
+                    </div>
                 </div>
 
             </div>
@@ -263,65 +232,11 @@
 
             <div class="queue-panel">
 
-                <h2>UP NEXT</h2>
+                <h2>SIGUIENTE EN COLA</h2>
 
-                <div class="queue-list">
-
-                    <div class="queue-song active-song">
-
-                        <img src="https://picsum.photos/100?51">
-
-                        <div>
-
-                            <h4>Neon Protocol</h4>
-
-                            <p>Data_Streamer</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="queue-song">
-
-                        <img src="https://picsum.photos/100?52">
-
-                        <div>
-
-                            <h4>Ghost in the Stack</h4>
-
-                            <p>Neural Protocol</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="queue-song">
-
-                        <img src="https://picsum.photos/100?53">
-
-                        <div>
-
-                            <h4>Signal Drift</h4>
-
-                            <p>Void State</p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="queue-song">
-
-                        <img src="https://picsum.photos/100?54">
-
-                        <div>
-
-                            <h4>Pulse Architecture</h4>
-
-                            <p>SYNTH_DATA</p>
-
-                        </div>
-
-                    </div>
+                <div class="queue-list" id="queue-container">
+                    <!-- Se inyecta dinámicamente -->
+                </div>
 
                 </div>
 
@@ -329,12 +244,10 @@
 
                 <div class="insights-panel">
 
-                    <h3>Neural Insights</h3>
+                    <h3>Análisis Neuronal</h3>
 
                     <p>
-                        Current playback exhibits
-                        elevated harmonic convergence
-                        and high emotional resonance.
+                        La reproducción actual muestra una alta convergencia armónica y resonancia emocional.
                     </p>
 
                 </div>
@@ -346,9 +259,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
+    <script src="js/catalog.js"></script>
+    <script src="js/player_controller.js"></script>
     <script src="js/player.js"></script>
-
 </body>
-
 </html>

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Library</title>
+    <title>Biblioteca</title>
 
     <link rel="stylesheet" href="css/library.css">
 
@@ -42,22 +42,17 @@
 
                 <a href="home.html">
                     <i class="fa-solid fa-house"></i>
-                    Home
+                    Inicio
                 </a>
 
                 <a href="search.html">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    Search
+                    Buscar
                 </a>
 
                 <a class="active" href="library.html">
                     <i class="fa-solid fa-book"></i>
-                    Library
-                </a>
-
-                <a href="#">
-                    <i class="fa-solid fa-radio"></i>
-                    Radio
+                    Biblioteca
                 </a>
 
             </div>
@@ -66,20 +61,20 @@
 
         <div class="bottom-section">
 
-            <button class="genres-btn">
-                Your Top Genres
+            <button class="genres-btn" style="cursor: pointer;">
+                Tus Géneros Top
             </button>
 
             <div class="bottom-menu">
 
-                <a href="#">
+                <a href="#" id="settings-btn">
                     <i class="fa-solid fa-gear"></i>
-                    Settings
+                    Ajustes
                 </a>
 
                 <a href="#">
                     <i class="fa-solid fa-circle-question"></i>
-                    Support
+                    Soporte
                 </a>
 
             </div>
@@ -98,18 +93,18 @@
 
             <div class="top-links">
 
-                <a href="#">Discover</a>
+                <a href="#">Descubrir</a>
 
-                <a href="#">New Releases</a>
+                <a href="#">Novedades</a>
 
-                <a href="#">Live</a>
+                <a href="#">En Vivo</a>
 
             </div>
 
             <div class="top-right">
 
                 <button class="upgrade-btn">
-                    Upgrade
+                    Premium
                 </button>
 
                 <i class="fa-regular fa-bell"></i>
@@ -128,24 +123,20 @@
 
                 <img
                     class="profile-image"
-                    src="https://picsum.photos/300?10"
+                    src="https://picsum.photos/300?88"
                 >
 
                 <div class="library-info">
 
                     <p class="library-tag">
-                        YOUR LIBRARY
+                        TU BIBLIOTECA
                     </p>
 
-                    <h1>Alex_Vibes</h1>
+                    <h1 id="library-username">Alex_Vibes</h1>
 
-                    <div class="library-stats">
+                    <div class="library-stats" id="library-stats">
 
-                        <span>142 Playlists</span>
-
-                        <span>1.2K Followers</span>
-
-                        <span>48 Following</span>
+                        <span>0 Listas</span>
 
                     </div>
 
@@ -155,17 +146,17 @@
 
             <div class="library-actions">
 
-                <button class="play-all-btn">
+                <button class="play-all-btn" id="shuffle-play-btn" style="cursor: pointer;">
 
-                    <i class="fa-solid fa-play"></i>
+                    <i class="fa-solid fa-shuffle"></i>
 
-                    Play All
+                    Rep. Aleatoria
 
                 </button>
 
-                <button class="dots-btn">
+                <button class="dots-btn" id="create-playlist-btn" title="Crear Lista" style="background: #1f1f1f; border-radius: 50%; color: #39FF14; border: 1px solid #39FF14; cursor: pointer; display: flex; justify-content: center; align-items: center; width: 48px; height: 48px;">
 
-                    <i class="fa-solid fa-ellipsis"></i>
+                    <i class="fa-solid fa-plus"></i>
 
                 </button>
 
@@ -178,113 +169,41 @@
         <div class="library-filters">
 
             <button class="filter-active">
-                All
+                Todo
             </button>
 
-            <button>Playlists</button>
+            <button>Listas</button>
 
-            <button>Albums</button>
+            <button>Álbumes</button>
 
-            <button>Artists</button>
+            <button>Artistas</button>
 
-            <button>Downloaded</button>
+            <button>Descargas</button>
 
         </div>
 
         <!-- LIBRARY GRID -->
 
-        <div class="library-grid">
+        <div class="library-grid" id="playlists-grid">
+            <!-- Cargado dinámicamente -->
+        </div>
 
-            <!-- BIG CARD -->
-
-            <a href="playlist.html" class="liked-card">
-
-                <div class="liked-overlay"></div>
-
-                <div class="liked-content">
-
-                    <p>PLAYLIST</p>
-
-                    <h2>Liked Songs</h2>
-
-                    <span>428 tracks</span>
-
+        <!-- MODAL CREACIÓN PLAYLIST -->
+        <div id="playlist-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center;">
+            <div style="background: #0d0d0d; border: 1px solid #39FF14; border-radius: 20px; padding: 30px; width: 400px; box-shadow: 0 0 30px rgba(57,255,20,0.25);">
+                <h3 id="modal-title" style="color: #39FF14; font-size: 20px; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">Compilar Nueva Lista</h3>
+                
+                <p style="color: #9a9a9a; font-size: 13px; margin-bottom: 8px;">Título de la Lista</p>
+                <input type="text" id="playlist-name-input" placeholder="Ingresa el título de la lista..." style="width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 12px; margin-bottom: 20px; outline: none; font-size: 14px; font-family: inherit;">
+                
+                <p style="color: #9a9a9a; font-size: 13px; margin-bottom: 8px;">URL de Portada de Imagen (Opcional)</p>
+                <input type="text" id="playlist-cover-input" placeholder="URL de la imagen..." style="width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 12px; margin-bottom: 20px; outline: none; font-size: 14px; font-family: inherit;">
+                
+                <div style="display: flex; justify-content: flex-end; gap: 12px;">
+                    <button id="close-modal-btn" style="background: transparent; border: 1px solid #555; color: white; padding: 10px 18px; border-radius: 8px; cursor: pointer;">Cancelar</button>
+                    <button id="save-playlist-btn" style="background: #39FF14; border: none; color: black; font-weight: bold; padding: 10px 22px; border-radius: 8px; cursor: pointer; box-shadow: 0 0 15px rgba(57,255,20,0.3);">Compilar</button>
                 </div>
-
-            </a>
-
-            <!-- CARDS -->
-
-            <a href="playlist.html" class="library-card">
-
-                <img src="https://picsum.photos/300?11">
-
-                <h4>Deep Focus Vol. 4</h4>
-
-                <p>Playlist • VIBES</p>
-
-            </a>
-
-            <a href="playlist.html" class="library-card">
-
-                <img src="https://picsum.photos/300?12">
-
-                <h4>Cybernetic Dreams</h4>
-
-                <p>Album • SYNTH_DATA</p>
-
-            </a>
-
-            <a href="playlist.html" class="library-card">
-
-                <img src="https://picsum.photos/300?13">
-
-                <h4>Jon Hopkins</h4>
-
-                <p>Artist</p>
-
-            </a>
-
-            <a href="playlist.html" class="library-card">
-
-                <img src="https://picsum.photos/300?14">
-
-                <h4>Night Drive</h4>
-
-                <p>Playlist • Alex_Vibes</p>
-
-            </a>
-
-            <a href="playlist.html" class="library-card">
-
-                <img src="https://picsum.photos/300?15">
-
-                <h4>Neural Immersion</h4>
-
-                <p>Album • Data_Streamer</p>
-
-            </a>
-
-            <a href="playlist.html" class="library-card">
-
-                <img src="https://picsum.photos/300?16">
-
-                <h4>Signal Fade</h4>
-
-                <p>Playlist • VIBES</p>
-
-            </a>
-
-            <a href="playlist.html" class="library-card">
-
-                <img src="https://picsum.photos/300?17">
-
-                <h4>Void State</h4>
-
-                <p>Artist</p>
-
-            </a>
-
+            </div>
         </div>
 
     </div>
@@ -297,13 +216,13 @@
 
         <a href="player.html" class="song-info">
 
-            <img src="https://picsum.photos/100?18">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=100&auto=format&fit=crop">
 
             <div>
 
-                <h4>Neon Protocol</h4>
+                <h4>Ninguna sonando</h4>
 
-                <p>Data_Streamer</p>
+                <p>VIBES</p>
 
             </div>
 
@@ -360,9 +279,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
+    <script src="js/catalog.js"></script>
+    <script src="js/player_controller.js"></script>
     <script src="js/library.js"></script>
-
 </body>
-
 </html>

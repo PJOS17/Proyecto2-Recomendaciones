@@ -28,3 +28,6 @@ particlesJS("particles-js", {
     }
   }
 });
+
+// Limpiar sesión al volver a la página de bienvenida
+localStorage.removeItem("vibes_user");

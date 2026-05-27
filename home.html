@@ -42,39 +42,42 @@
 
                 <a class="active" href="home.html">
                     <i class="fa-solid fa-house"></i>
-                    Home
+                    Inicio
                 </a>
 
                 <a href="search.html">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    Search
+                    Buscar
                 </a>
 
                 <a href="library.html">
                     <i class="fa-solid fa-book"></i>
-                    Library
-                </a>
-
-                <a href="#">
-                    <i class="fa-solid fa-radio"></i>
-                    Radio
+                    Biblioteca
                 </a>
 
             </div>
 
         </div>
 
-        <div class="bottom-menu">
+        <div class="bottom-section">
 
-            <a href="#">
-                <i class="fa-solid fa-gear"></i>
-                Settings
-            </a>
+            <button class="genres-btn" style="cursor: pointer;">
+                Tus Géneros Top
+            </button>
 
-            <a href="#">
-                <i class="fa-solid fa-circle-question"></i>
-                Support
-            </a>
+            <div class="bottom-menu">
+
+                <a href="#" id="settings-btn">
+                    <i class="fa-solid fa-gear"></i>
+                    Ajustes
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-circle-question"></i>
+                    Soporte
+                </a>
+
+            </div>
 
         </div>
 
@@ -90,18 +93,18 @@
 
             <div class="top-links">
 
-                <a href="#">Discover</a>
+                <a href="#">Descubrir</a>
 
-                <a href="#">New Releases</a>
+                <a href="#">Novedades</a>
 
-                <a href="#">Live</a>
+                <a href="#">En Vivo</a>
 
             </div>
 
             <div class="top-right">
 
                 <button class="upgrade-btn">
-                    Upgrade
+                    Premium
                 </button>
 
                 <i class="fa-regular fa-bell"></i>
@@ -116,12 +119,12 @@
 
         <div class="hero-section">
 
-            <h1>Welcome back, Marco</h1>
+            <h1 id="welcome-message">Bienvenido de nuevo, Marco</h1>
 
             <p>
-                Your neural listening matrix has been updated.
-                Generating personalized sonic pathways based
-                on your recent activity.
+                Tu matriz de escucha neuronal ha sido optimizada.
+                Generando vías sonoras personalizadas según
+                tus gustos y afinidades acústicas.
             </p>
 
         </div>
@@ -140,11 +143,11 @@
 
                 <div>
 
-                    <h3>Analyzing your vibes...</h3>
+                    <h3>Analizando tus vibras...</h3>
 
                     <p>
-                        MAPPING STRUCTURAL AFFINITIES
-                        ACROSS 42 RECENT NODES
+                        MAPEANDO AFINIDADES ESTRUCTURALES
+                        EN 42 NODOS DE AUDIO RECIENTES
                     </p>
 
                 </div>
@@ -153,96 +156,26 @@
 
         </div>
 
-        <!-- RECENT HISTORY -->
+        <!-- RECOMMENDED MUSIC -->
 
         <div class="section-title">
 
-            <h2>Recent History</h2>
+            <h2>Canciones Recomendadas</h2>
 
         </div>
 
-        <div class="card-grid">
+        <div class="card-grid" id="recommended-songs-grid">
+            <!-- Cargado dinámicamente -->
+        </div>
 
-            <a href="playlist.html" class="music-card">
+        <div class="section-title" style="margin-top: 40px;">
 
-                <img src="https://picsum.photos/300?1">
+            <h2>Artistas Recomendados</h2>
 
-                <h4>Synaptic Echoes</h4>
+        </div>
 
-                <p>Neural Protocol</p>
-
-            </a>
-
-            <a href="playlist.html" class="music-card">
-
-                <img src="https://picsum.photos/300?2">
-
-                <h4>Void Sequence 04</h4>
-
-                <p>Architects of Silence</p>
-
-            </a>
-
-            <a href="playlist.html" class="music-card">
-
-                <img src="https://picsum.photos/300?3">
-
-                <h4>Lumina</h4>
-
-                <p>Artist</p>
-
-            </a>
-
-            <a href="playlist.html" class="music-card">
-
-                <img src="https://picsum.photos/300?4">
-
-                <h4>Topological Maps</h4>
-
-                <p>Data.Set</p>
-
-            </a>
-
-            <a href="playlist.html" class="music-card">
-
-                <img src="https://picsum.photos/300?5">
-
-                <h4>Quantum State</h4>
-
-                <p>Binary Observers</p>
-
-            </a>
-
-            <a href="playlist.html" class="music-card">
-
-                <img src="https://picsum.photos/300?6">
-
-                <h4>Abyssal Plain</h4>
-
-                <p>Deep Sea Protocol</p>
-
-            </a>
-
-            <a href="playlist.html" class="music-card">
-
-                <img src="https://picsum.photos/300?7">
-
-                <h4>Concrete Polygons</h4>
-
-                <p>Structure</p>
-
-            </a>
-
-            <a href="playlist.html" class="music-card">
-
-                <img src="https://picsum.photos/300?8">
-
-                <h4>Signal Drift</h4>
-
-                <p>Network Echo</p>
-
-            </a>
-
+        <div class="card-grid" id="recommended-artists-grid">
+            <!-- Cargado dinámicamente -->
         </div>
 
     </div>
@@ -255,13 +188,13 @@
 
         <a href="player.html" class="song-info">
 
-            <img src="https://picsum.photos/100?9">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=100&auto=format&fit=crop">
 
             <div>
 
-                <h4>Synaptic Echoes</h4>
+                <h4>Ninguna sonando</h4>
 
-                <p>Neural Protocol</p>
+                <p>VIBES</p>
 
             </div>
 
@@ -295,7 +228,7 @@
 
             <i class="fa-solid fa-computer"></i>
 
-            <span>2:14</span>
+            <span>0:00</span>
 
             <div class="progress-bar">
 
@@ -303,7 +236,7 @@
 
             </div>
 
-            <span>5:42</span>
+            <span>0:00</span>
 
             <i class="fa-solid fa-volume-high"></i>
 
@@ -317,10 +250,41 @@
 
     </div>
 
+    <!-- MODAL DE CONFIGURACIÓN (SETTINGS) -->
+    <div id="settings-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: #0d0d0d; border: 1px solid #39FF14; border-radius: 20px; padding: 30px; width: 450px; box-shadow: 0 0 30px rgba(57,255,20,0.25); font-family: inherit;">
+            <h3 style="color: #39FF14; font-size: 20px; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">Configuración de Sistema</h3>
+            
+            <p style="color: #9a9a9a; font-size: 13px; margin-bottom: 8px;">Modo de Conexión</p>
+            <select id="db-mode-select" style="width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 12px; margin-bottom: 20px; outline: none; font-size: 14px; font-family: inherit;">
+                <option value="local">Almacenamiento Local (100% Offline / Para subir a Git)</option>
+                <option value="neo4j">Neo4j (Conexión Híbrida / Requiere Servidor)</option>
+            </select>
+
+            <div id="neo4j-creds-container" style="display: none; margin-bottom: 20px;">
+                <p style="color: #9a9a9a; font-size: 13px; margin-bottom: 8px;">URI del Servidor Neo4j</p>
+                <input type="text" id="neo4j-uri" value="neo4j+s://d544acc5.databases.neo4j.io" style="width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 12px; margin-bottom: 12px; outline: none; font-size: 13px;">
+                
+                <p style="color: #9a9a9a; font-size: 13px; margin-bottom: 8px;">Usuario</p>
+                <input type="text" id="neo4j-user" value="d544acc5" style="width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 12px; margin-bottom: 12px; outline: none; font-size: 13px;">
+                
+                <p style="color: #9a9a9a; font-size: 13px; margin-bottom: 8px;">Contraseña de Seguridad</p>
+                <input type="password" id="neo4j-pass" value="3JdyXlKfIxftHD0U9-jMTni7_DWovV10M2TNscwVU1k" style="width: 100%; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 12px; outline: none; font-size: 13px;">
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                <button id="reset-app-btn" style="background: transparent; border: 1px solid #ff3333; color: #ff3333; padding: 10px 14px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: bold; text-transform: uppercase;">Reiniciar Datos</button>
+                <div style="display: flex; gap: 12px;">
+                    <button id="close-settings-btn" style="background: transparent; border: 1px solid #555; color: white; padding: 10px 18px; border-radius: 8px; cursor: pointer;">Cerrar</button>
+                    <button id="save-settings-btn" style="background: #39FF14; border: none; color: black; font-weight: bold; padding: 10px 22px; border-radius: 8px; cursor: pointer; box-shadow: 0 0 15px rgba(57,255,20,0.3);">Aplicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
+    <script src="js/catalog.js"></script>
+    <script src="js/player_controller.js"></script>
     <script src="js/home.js"></script>
-
 </body>
-
 </html>

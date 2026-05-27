@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Search</title>
+    <title>Buscar</title>
 
     <link rel="stylesheet" href="css/search.css">
 
@@ -41,22 +41,17 @@
 
                 <a href="home.html">
                     <i class="fa-solid fa-house"></i>
-                    Home
+                    Inicio
                 </a>
 
                 <a class="active" href="search.html">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    Search
+                    Buscar
                 </a>
 
                 <a href="library.html">
                     <i class="fa-solid fa-book"></i>
-                    Library
-                </a>
-
-                <a href="#">
-                    <i class="fa-solid fa-radio"></i>
-                    Radio
+                    Biblioteca
                 </a>
 
             </div>
@@ -65,20 +60,20 @@
 
         <div>
 
-            <button class="genres-btn">
-                Your Top Genres
+            <button class="genres-btn" style="cursor: pointer;">
+                Tus Géneros Top
             </button>
 
             <div class="bottom-menu">
 
-                <a href="#">
+                <a href="#" id="settings-btn">
                     <i class="fa-solid fa-gear"></i>
-                    Settings
+                    Ajustes
                 </a>
 
                 <a href="#">
                     <i class="fa-solid fa-circle-question"></i>
-                    Support
+                    Soporte
                 </a>
 
             </div>
@@ -97,16 +92,16 @@
 
             <div class="top-links">
 
-                <a href="#">Discover</a>
-                <a href="#">New Releases</a>
-                <a href="#">Live</a>
+                <a href="#">Descubrir</a>
+                <a href="#">Novedades</a>
+                <a href="#">En Vivo</a>
 
             </div>
 
             <div class="top-right">
 
                 <button class="upgrade-btn">
-                    Upgrade
+                    Premium
                 </button>
 
                 <i class="fa-regular fa-bell"></i>
@@ -125,23 +120,40 @@
 
             <input
                 type="text"
-                placeholder="Search artists, tracks, or data nodes..."
+                id="search-input"
+                placeholder="Buscar canciones, artistas, géneros o moods..."
             >
 
+        </div>
+
+        <!-- RELATED SEARCHES -->
+        <div id="related-searches-container" style="display: none; margin-top: 15px; margin-bottom: 15px; font-family: inherit; display: flex; align-items: center;">
+            <span style="color: #666; font-size: 11px; font-weight: bold; text-transform: uppercase; margin-right: 12px; letter-spacing: 0.5px;">Búsquedas relacionadas:</span>
+            <div id="related-searches" style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <!-- Se inyecta dinámicamente -->
+            </div>
         </div>
 
         <!-- TAGS -->
 
         <div class="tag-row">
 
-            <button>Cyberpunk</button>
+            <button>Rock</button>
 
-            <button>Neural Funk</button>
+            <button>Pop</button>
 
-            <button>Synthwave</button>
+            <button>Reggaetón</button>
 
-            <button>Data Sonification</button>
+            <button>Estudio</button>
 
+        </div>
+
+        <!-- SEARCH RESULTS -->
+        <div class="section-title" id="results-title" style="display: none; margin-top: 30px;">
+            <h2>Resultados de Búsqueda</h2>
+        </div>
+        <div class="card-grid" id="search-results-grid" style="display: none; margin-bottom: 40px;">
+            <!-- Resultados se cargan dinámicamente -->
         </div>
 
         <!-- SEARCH LAYOUT -->
@@ -158,11 +170,11 @@
 
                 </div>
 
-                <h3>Interactive Topology Map</h3>
+                <h3>Mapa de Topología Interactiva</h3>
 
                 <p>
-                    Discover contextual recommendations based on
-                    acoustic data similarity.
+                    Descubre recomendaciones contextuales basadas en
+                    la similitud acústica y estructural de datos.
                 </p>
 
             </div>
@@ -171,15 +183,15 @@
 
             <div class="node-panel">
 
-                <h4>Selected Node</h4>
+                <h4>Nodo Seleccionado</h4>
 
-                <h1>NOD3_ALPHA</h1>
+                <h1>NOD3_ROCK</h1>
 
-                <p>Similarity Index: 98.4%</p>
+                <p>Índice de Compatibilidad: 98.4%</p>
 
                 <div class="stat">
 
-                    <span>BPM Variance</span>
+                    <span>Varianza de BPM</span>
 
                     <div class="line"></div>
 
@@ -187,7 +199,7 @@
 
                 <div class="stat">
 
-                    <span>Timbre Complexity</span>
+                    <span>Complejidad de Timbre</span>
 
                     <div class="line"></div>
 
@@ -195,14 +207,14 @@
 
                 <div class="stat">
 
-                    <span>Neural Density</span>
+                    <span>Densidad Neuronal</span>
 
                     <div class="line"></div>
 
                 </div>
 
                 <button class="play-cluster">
-                    Play Cluster
+                    Reproducir Nodo
                 </button>
 
             </div>
@@ -213,7 +225,7 @@
 
         <div class="section-title">
 
-            <h2>Recommended Nodes</h2>
+            <h2>Nodos Sugeridos</h2>
 
         </div>
 
@@ -221,41 +233,41 @@
 
             <div class="recommend-card">
 
-                <img src="https://picsum.photos/300?1">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=300&auto=format&fit=crop">
 
-                <h4>Ghost Protocol</h4>
+                <h4>Sweet Child O' Mine</h4>
 
-                <p>98% compatibility</p>
-
-            </div>
-
-            <div class="recommend-card">
-
-                <img src="https://picsum.photos/300?2">
-
-                <h4>Neon Collapse</h4>
-
-                <p>96% compatibility</p>
+                <p>98% de compatibilidad</p>
 
             </div>
 
             <div class="recommend-card">
 
-                <img src="https://picsum.photos/300?3">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=300&auto=format&fit=crop">
 
-                <h4>Data Bloom</h4>
+                <h4>In The End</h4>
 
-                <p>94% compatibility</p>
+                <p>96% de compatibilidad</p>
 
             </div>
 
             <div class="recommend-card">
 
-                <img src="https://picsum.photos/300?4">
+                <img src="https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?q=80&w=300&auto=format&fit=crop">
 
-                <h4>Signal Fade</h4>
+                <h4>Monster</h4>
 
-                <p>92% compatibility</p>
+                <p>94% de compatibilidad</p>
+
+            </div>
+
+            <div class="recommend-card">
+
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=300&auto=format&fit=crop">
+
+                <h4>Get Lucky</h4>
+
+                <p>92% de compatibilidad</p>
 
             </div>
 
@@ -271,13 +283,13 @@
 
         <a href="player.html" class="song-info">
 
-            <img src="https://picsum.photos/100?10">
+            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=100&auto=format&fit=crop">
 
             <div>
 
-                <h4>Neural Link / Alpha</h4>
+                <h4>Ninguna sonando</h4>
 
-                <p>Jon Hopkins</p>
+                <p>VIBES</p>
 
             </div>
 
@@ -311,7 +323,7 @@
 
             <i class="fa-solid fa-computer"></i>
 
-            <span>2:14</span>
+            <span>0:00</span>
 
             <div class="progress-bar">
 
@@ -319,7 +331,7 @@
 
             </div>
 
-            <span>6:14</span>
+            <span>0:00</span>
 
             <i class="fa-solid fa-volume-high"></i>
 
@@ -334,9 +346,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
+    <script src="js/catalog.js"></script>
+    <script src="js/player_controller.js"></script>
     <script src="js/search.js"></script>
-
 </body>
-
 </html>
